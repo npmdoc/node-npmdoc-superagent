@@ -46,1858 +46,1858 @@
     font-weight: bold;
 }
 </style>
-<h1>api-documentation for
+<h1>api documentation for
     <a
-        
+
         href="https://github.com/visionmedia/superagent#readme"
-        
-    >superagent (v3.5.1)</a>
+
+    >superagent (v3.5.2)</a>
 </h1>
 <h4>elegant & feature rich browser / node HTTP with a fluent API</h4>
 <div class="apidocSectionDiv"><a
     href="#apidoc.tableOfContents"
     id="apidoc.tableOfContents"
 ><h1>table of contents</h1></a><ol>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent">module superagent</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request">
             function <span class="apidocSignatureSpan">superagent.</span>Request
             <span class="apidocSignatureSpan">(method, url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response">
             function <span class="apidocSignatureSpan">superagent.</span>Response
             <span class="apidocSignatureSpan">(req)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.acl">
             function <span class="apidocSignatureSpan">superagent.</span>acl
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent">
             function <span class="apidocSignatureSpan">superagent.</span>agent
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.bind">
             function <span class="apidocSignatureSpan">superagent.</span>bind
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.checkout">
             function <span class="apidocSignatureSpan">superagent.</span>checkout
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client">
             function <span class="apidocSignatureSpan">superagent.</span>client
             <span class="apidocSignatureSpan">(method, url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.connect">
             function <span class="apidocSignatureSpan">superagent.</span>connect
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.copy">
             function <span class="apidocSignatureSpan">superagent.</span>copy
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.del">
             function <span class="apidocSignatureSpan">superagent.</span>del
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.delete">
             function <span class="apidocSignatureSpan">superagent.</span>delete
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.get">
             function <span class="apidocSignatureSpan">superagent.</span>get
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.head">
             function <span class="apidocSignatureSpan">superagent.</span>head
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.link">
             function <span class="apidocSignatureSpan">superagent.</span>link
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.lock">
             function <span class="apidocSignatureSpan">superagent.</span>lock
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.m-search">
             function <span class="apidocSignatureSpan">superagent.</span>m-search
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.merge">
             function <span class="apidocSignatureSpan">superagent.</span>merge
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.mkactivity">
             function <span class="apidocSignatureSpan">superagent.</span>mkactivity
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.mkcalendar">
             function <span class="apidocSignatureSpan">superagent.</span>mkcalendar
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.mkcol">
             function <span class="apidocSignatureSpan">superagent.</span>mkcol
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.move">
             function <span class="apidocSignatureSpan">superagent.</span>move
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.notify">
             function <span class="apidocSignatureSpan">superagent.</span>notify
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.options">
             function <span class="apidocSignatureSpan">superagent.</span>options
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.patch">
             function <span class="apidocSignatureSpan">superagent.</span>patch
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.post">
             function <span class="apidocSignatureSpan">superagent.</span>post
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.propfind">
             function <span class="apidocSignatureSpan">superagent.</span>propfind
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.proppatch">
             function <span class="apidocSignatureSpan">superagent.</span>proppatch
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.purge">
             function <span class="apidocSignatureSpan">superagent.</span>purge
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.put">
             function <span class="apidocSignatureSpan">superagent.</span>put
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.rebind">
             function <span class="apidocSignatureSpan">superagent.</span>rebind
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.report">
             function <span class="apidocSignatureSpan">superagent.</span>report
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base">
             function <span class="apidocSignatureSpan">superagent.</span>request_base
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.response_base">
             function <span class="apidocSignatureSpan">superagent.</span>response_base
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.search">
             function <span class="apidocSignatureSpan">superagent.</span>search
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.subscribe">
             function <span class="apidocSignatureSpan">superagent.</span>subscribe
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.trace">
             function <span class="apidocSignatureSpan">superagent.</span>trace
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.unbind">
             function <span class="apidocSignatureSpan">superagent.</span>unbind
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.unlink">
             function <span class="apidocSignatureSpan">superagent.</span>unlink
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.unlock">
             function <span class="apidocSignatureSpan">superagent.</span>unlock
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.unsubscribe">
             function <span class="apidocSignatureSpan">superagent.</span>unsubscribe
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>Request.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>Response.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>agent.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>parse</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>protocols</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>request_base.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>response_base.prototype</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>serialize</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.</span>utils</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.Request">module superagent.Request</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.Request">
             function <span class="apidocSignatureSpan">superagent.</span>Request
             <span class="apidocSignatureSpan">(method, url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.super_">
             function <span class="apidocSignatureSpan">superagent.Request.</span>super_
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.Request.prototype">module superagent.Request.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._appendQueryString">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_appendQueryString
             <span class="apidocSignatureSpan">(req)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._emitResponse">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_emitResponse
             <span class="apidocSignatureSpan">(body, files)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._end">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_end
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._getFormData">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_getFormData
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._isHost">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_isHost
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._isResponseOK">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_isResponseOK
             <span class="apidocSignatureSpan">(res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._pipeContinue">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_pipeContinue
             <span class="apidocSignatureSpan">(stream, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._redirect">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_redirect
             <span class="apidocSignatureSpan">(res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._retry">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_retry
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._setTimeouts">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_setTimeouts
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._shouldUnzip">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_shouldUnzip
             <span class="apidocSignatureSpan">(res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype._timeoutError">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_timeoutError
             <span class="apidocSignatureSpan">(reason, timeout, errno)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.abort">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>abort
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.accept">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>accept
             <span class="apidocSignatureSpan">(type)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.agent">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>agent
             <span class="apidocSignatureSpan">(agent)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.attach">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>attach
             <span class="apidocSignatureSpan">(field, file, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.auth">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>auth
             <span class="apidocSignatureSpan">(user, pass, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.buffer">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>buffer
             <span class="apidocSignatureSpan">(val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.ca">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>ca
             <span class="apidocSignatureSpan">(cert)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.callback">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>callback
             <span class="apidocSignatureSpan">(err, res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.catch">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>catch
             <span class="apidocSignatureSpan">(cb)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.cert">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>cert
             <span class="apidocSignatureSpan">(cert)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.clearTimeout">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>clearTimeout
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.end">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>end
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.field">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>field
             <span class="apidocSignatureSpan">(name, val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.get">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>get
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.getHeader">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>getHeader
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.key">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>key
             <span class="apidocSignatureSpan">(cert)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.ok">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>ok
             <span class="apidocSignatureSpan">(cb)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.parse">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>parse
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.pfx">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>pfx
             <span class="apidocSignatureSpan">(cert)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.pipe">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>pipe
             <span class="apidocSignatureSpan">(stream, options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.query">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>query
             <span class="apidocSignatureSpan">(val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.redirects">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>redirects
             <span class="apidocSignatureSpan">(n)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.request">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>request
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.responseType">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>responseType
             <span class="apidocSignatureSpan">(val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.retry">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>retry
             <span class="apidocSignatureSpan">(count)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.send">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>send
             <span class="apidocSignatureSpan">(data)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.serialize">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>serialize
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.set">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>set
             <span class="apidocSignatureSpan">(field, val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.sortQuery">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>sortQuery
             <span class="apidocSignatureSpan">(sort)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.then">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>then
             <span class="apidocSignatureSpan">(resolve, reject)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.timeout">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>timeout
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.toJSON">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>toJSON
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.type">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>type
             <span class="apidocSignatureSpan">(type)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.unset">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>unset
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.use">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>use
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.withCredentials">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>withCredentials
             <span class="apidocSignatureSpan">(on)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Request.prototype.write">
             function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>write
             <span class="apidocSignatureSpan">(data, encoding)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.Response">module superagent.Response</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.Response">
             function <span class="apidocSignatureSpan">superagent.</span>Response
             <span class="apidocSignatureSpan">(req)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.super_">
             function <span class="apidocSignatureSpan">superagent.Response.</span>super_
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.Response.prototype">module superagent.Response.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype._setHeaderProperties">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>_setHeaderProperties
             <span class="apidocSignatureSpan">(header)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype._setStatusProperties">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>_setStatusProperties
             <span class="apidocSignatureSpan">(status)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.destroy">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>destroy
             <span class="apidocSignatureSpan">(err)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.get">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>get
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.pause">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>pause
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.resume">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>resume
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.setStatusProperties">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>setStatusProperties
             <span class="apidocSignatureSpan">(status)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.toError">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>toError
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.Response.prototype.toJSON">
             function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>toJSON
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.agent">module superagent.agent</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.agent">
             function <span class="apidocSignatureSpan">superagent.</span>agent
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.agent.prototype">module superagent.agent.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype._attachCookies">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>_attachCookies
             <span class="apidocSignatureSpan">(req)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype._saveCookies">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>_saveCookies
             <span class="apidocSignatureSpan">(res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.acl">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>acl
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.bind">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>bind
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.checkout">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>checkout
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.connect">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>connect
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.copy">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>copy
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.del">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>del
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.delete">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>delete
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.get">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>get
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.head">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>head
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.link">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>link
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.lock">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>lock
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.m-search">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>m-search
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.merge">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>merge
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.mkactivity">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkactivity
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.mkcalendar">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkcalendar
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.mkcol">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkcol
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.move">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>move
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.notify">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>notify
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.options">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>options
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.patch">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>patch
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.post">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>post
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.propfind">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>propfind
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.proppatch">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>proppatch
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.purge">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>purge
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.put">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>put
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.rebind">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>rebind
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.report">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>report
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.search">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>search
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.subscribe">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>subscribe
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.trace">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>trace
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.unbind">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unbind
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.unlink">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unlink
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.unlock">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unlock
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.agent.prototype.unsubscribe">
             function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unsubscribe
             <span class="apidocSignatureSpan">(url, fn)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.client">module superagent.client</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.client">
             function <span class="apidocSignatureSpan">superagent.</span>client
             <span class="apidocSignatureSpan">(method, url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.Request">
             function <span class="apidocSignatureSpan">superagent.client.</span>Request
             <span class="apidocSignatureSpan">(method, url)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.Response">
             function <span class="apidocSignatureSpan">superagent.client.</span>Response
             <span class="apidocSignatureSpan">(req)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.del">
             function <span class="apidocSignatureSpan">superagent.client.</span>del
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.delete">
             function <span class="apidocSignatureSpan">superagent.client.</span>delete
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.get">
             function <span class="apidocSignatureSpan">superagent.client.</span>get
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.getXHR">
             function <span class="apidocSignatureSpan">superagent.client.</span>getXHR
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.head">
             function <span class="apidocSignatureSpan">superagent.client.</span>head
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.options">
             function <span class="apidocSignatureSpan">superagent.client.</span>options
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.parseString">
             function <span class="apidocSignatureSpan">superagent.client.</span>parseString
             <span class="apidocSignatureSpan">(str)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.patch">
             function <span class="apidocSignatureSpan">superagent.client.</span>patch
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.post">
             function <span class="apidocSignatureSpan">superagent.client.</span>post
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.put">
             function <span class="apidocSignatureSpan">superagent.client.</span>put
             <span class="apidocSignatureSpan">(url, data, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.client.serializeObject">
             function <span class="apidocSignatureSpan">superagent.client.</span>serializeObject
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.client.</span>parse</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.client.</span>serialize</span>
-            
+
         </li>
-        
+
         <li>
-            
+
             <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">superagent.client.</span>types</span>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.parse">module superagent.parse</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.parse.image">
             function <span class="apidocSignatureSpan">superagent.parse.</span>image
             <span class="apidocSignatureSpan">(res, fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.parse.text">
             function <span class="apidocSignatureSpan">superagent.parse.</span>text
             <span class="apidocSignatureSpan">(res, fn)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.request_base">module superagent.request_base</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.request_base">
             function <span class="apidocSignatureSpan">superagent.</span>request_base
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.request_base.prototype">module superagent.request_base.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype._isResponseOK">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_isResponseOK
             <span class="apidocSignatureSpan">(res)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype._retry">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_retry
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype._setTimeouts">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_setTimeouts
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype._timeoutError">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_timeoutError
             <span class="apidocSignatureSpan">(reason, timeout, errno)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.abort">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>abort
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.catch">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>catch
             <span class="apidocSignatureSpan">(cb)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.clearTimeout">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>clearTimeout
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.field">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>field
             <span class="apidocSignatureSpan">(name, val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.get">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>get
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.getHeader">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>getHeader
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.ok">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>ok
             <span class="apidocSignatureSpan">(cb)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.parse">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>parse
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.redirects">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>redirects
             <span class="apidocSignatureSpan">(n)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.responseType">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>responseType
             <span class="apidocSignatureSpan">(val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.retry">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>retry
             <span class="apidocSignatureSpan">(count)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.send">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>send
             <span class="apidocSignatureSpan">(data)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.serialize">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>serialize
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.set">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>set
             <span class="apidocSignatureSpan">(field, val)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.sortQuery">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>sortQuery
             <span class="apidocSignatureSpan">(sort)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.then">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>then
             <span class="apidocSignatureSpan">(resolve, reject)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.timeout">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>timeout
             <span class="apidocSignatureSpan">(options)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.toJSON">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>toJSON
             <span class="apidocSignatureSpan">()</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.unset">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>unset
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.use">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>use
             <span class="apidocSignatureSpan">(fn)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.request_base.prototype.withCredentials">
             function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>withCredentials
             <span class="apidocSignatureSpan">(on)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.response_base">module superagent.response_base</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.response_base.response_base">
             function <span class="apidocSignatureSpan">superagent.</span>response_base
             <span class="apidocSignatureSpan">(obj)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.response_base.prototype">module superagent.response_base.prototype</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.response_base.prototype._setHeaderProperties">
             function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>_setHeaderProperties
             <span class="apidocSignatureSpan">(header)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.response_base.prototype._setStatusProperties">
             function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>_setStatusProperties
             <span class="apidocSignatureSpan">(status)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.response_base.prototype.get">
             function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>get
             <span class="apidocSignatureSpan">(field)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.serialize">module superagent.serialize</a><ol>
-        
+
     </ol></li>
-    
+
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent.utils">module superagent.utils</a><ol>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.utils.cleanHeader">
             function <span class="apidocSignatureSpan">superagent.utils.</span>cleanHeader
             <span class="apidocSignatureSpan">(header, shouldStripCookie)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.utils.params">
             function <span class="apidocSignatureSpan">superagent.utils.</span>params
             <span class="apidocSignatureSpan">(str)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.utils.parseLinks">
             function <span class="apidocSignatureSpan">superagent.utils.</span>parseLinks
             <span class="apidocSignatureSpan">(str)</span>
             </a>
-            
+
         </li>
-        
+
         <li>
-            
+
             <a class="apidocElementLiA" href="#apidoc.element.superagent.utils.type">
             function <span class="apidocSignatureSpan">superagent.utils.</span>type
             <span class="apidocSignatureSpan">(str)</span>
             </a>
-            
+
         </li>
-        
+
     </ol></li>
-    
+
 </ol></div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent" id="apidoc.module.superagent">module superagent</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request" id="apidoc.element.superagent.Request">
         function <span class="apidocSignatureSpan">superagent.</span>Request
@@ -1940,9 +1940,9 @@ if (1 == arguments.length) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response" id="apidoc.element.superagent.Response">
         function <span class="apidocSignatureSpan">superagent.</span>Response
@@ -1970,9 +1970,9 @@ if (1 == arguments.length) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.acl" id="apidoc.element.superagent.acl">
         function <span class="apidocSignatureSpan">superagent.</span>acl
@@ -1989,9 +1989,9 @@ if (1 == arguments.length) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent" id="apidoc.element.superagent.agent">
         function <span class="apidocSignatureSpan">superagent.</span>agent
@@ -2011,9 +2011,9 @@ if (1 == arguments.length) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.bind" id="apidoc.element.superagent.bind">
         function <span class="apidocSignatureSpan">superagent.</span>bind
@@ -2043,13 +2043,13 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   } catch(e) {
     // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn&#x27;t exist.
     // Reported here:
-    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web\
+    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web
 -worker-context
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.checkout" id="apidoc.element.superagent.checkout">
         function <span class="apidocSignatureSpan">superagent.</span>checkout
@@ -2066,9 +2066,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client" id="apidoc.element.superagent.client">
         function <span class="apidocSignatureSpan">superagent.</span>client
@@ -2091,9 +2091,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.connect" id="apidoc.element.superagent.connect">
         function <span class="apidocSignatureSpan">superagent.</span>connect
@@ -2110,9 +2110,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.copy" id="apidoc.element.superagent.copy">
         function <span class="apidocSignatureSpan">superagent.</span>copy
@@ -2129,9 +2129,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.del" id="apidoc.element.superagent.del">
         function <span class="apidocSignatureSpan">superagent.</span>del
@@ -2148,9 +2148,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.delete" id="apidoc.element.superagent.delete">
         function <span class="apidocSignatureSpan">superagent.</span>delete
@@ -2167,9 +2167,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.get" id="apidoc.element.superagent.get">
         function <span class="apidocSignatureSpan">superagent.</span>get
@@ -2202,9 +2202,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.head" id="apidoc.element.superagent.head">
         function <span class="apidocSignatureSpan">superagent.</span>head
@@ -2221,9 +2221,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.link" id="apidoc.element.superagent.link">
         function <span class="apidocSignatureSpan">superagent.</span>link
@@ -2240,9 +2240,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.lock" id="apidoc.element.superagent.lock">
         function <span class="apidocSignatureSpan">superagent.</span>lock
@@ -2259,9 +2259,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.m-search" id="apidoc.element.superagent.m-search">
         function <span class="apidocSignatureSpan">superagent.</span>m-search
@@ -2278,9 +2278,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.merge" id="apidoc.element.superagent.merge">
         function <span class="apidocSignatureSpan">superagent.</span>merge
@@ -2297,9 +2297,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.mkactivity" id="apidoc.element.superagent.mkactivity">
         function <span class="apidocSignatureSpan">superagent.</span>mkactivity
@@ -2316,9 +2316,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.mkcalendar" id="apidoc.element.superagent.mkcalendar">
         function <span class="apidocSignatureSpan">superagent.</span>mkcalendar
@@ -2335,9 +2335,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.mkcol" id="apidoc.element.superagent.mkcol">
         function <span class="apidocSignatureSpan">superagent.</span>mkcol
@@ -2354,9 +2354,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.move" id="apidoc.element.superagent.move">
         function <span class="apidocSignatureSpan">superagent.</span>move
@@ -2373,9 +2373,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.notify" id="apidoc.element.superagent.notify">
         function <span class="apidocSignatureSpan">superagent.</span>notify
@@ -2392,9 +2392,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.options" id="apidoc.element.superagent.options">
         function <span class="apidocSignatureSpan">superagent.</span>options
@@ -2411,9 +2411,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.patch" id="apidoc.element.superagent.patch">
         function <span class="apidocSignatureSpan">superagent.</span>patch
@@ -2430,9 +2430,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.post" id="apidoc.element.superagent.post">
         function <span class="apidocSignatureSpan">superagent.</span>post
@@ -2451,8 +2451,8 @@ request
 $ npm install superagent
 ```
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -2466,9 +2466,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.propfind" id="apidoc.element.superagent.propfind">
         function <span class="apidocSignatureSpan">superagent.</span>propfind
@@ -2485,9 +2485,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.proppatch" id="apidoc.element.superagent.proppatch">
         function <span class="apidocSignatureSpan">superagent.</span>proppatch
@@ -2504,9 +2504,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.purge" id="apidoc.element.superagent.purge">
         function <span class="apidocSignatureSpan">superagent.</span>purge
@@ -2523,9 +2523,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.put" id="apidoc.element.superagent.put">
         function <span class="apidocSignatureSpan">superagent.</span>put
@@ -2542,9 +2542,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.rebind" id="apidoc.element.superagent.rebind">
         function <span class="apidocSignatureSpan">superagent.</span>rebind
@@ -2561,9 +2561,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.report" id="apidoc.element.superagent.report">
         function <span class="apidocSignatureSpan">superagent.</span>report
@@ -2580,9 +2580,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base" id="apidoc.element.superagent.request_base">
         function <span class="apidocSignatureSpan">superagent.</span>request_base
@@ -2595,9 +2595,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.response_base" id="apidoc.element.superagent.response_base">
         function <span class="apidocSignatureSpan">superagent.</span>response_base
@@ -2610,9 +2610,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.search" id="apidoc.element.superagent.search">
         function <span class="apidocSignatureSpan">superagent.</span>search
@@ -2629,9 +2629,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.subscribe" id="apidoc.element.superagent.subscribe">
         function <span class="apidocSignatureSpan">superagent.</span>subscribe
@@ -2648,9 +2648,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.trace" id="apidoc.element.superagent.trace">
         function <span class="apidocSignatureSpan">superagent.</span>trace
@@ -2667,9 +2667,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.unbind" id="apidoc.element.superagent.unbind">
         function <span class="apidocSignatureSpan">superagent.</span>unbind
@@ -2686,9 +2686,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.unlink" id="apidoc.element.superagent.unlink">
         function <span class="apidocSignatureSpan">superagent.</span>unlink
@@ -2705,9 +2705,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.unlock" id="apidoc.element.superagent.unlock">
         function <span class="apidocSignatureSpan">superagent.</span>unlock
@@ -2724,9 +2724,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.unsubscribe" id="apidoc.element.superagent.unsubscribe">
         function <span class="apidocSignatureSpan">superagent.</span>unsubscribe
@@ -2743,32 +2743,32 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.Request" id="apidoc.module.superagent.Request">module superagent.Request</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.Request" id="apidoc.element.superagent.Request.Request">
         function <span class="apidocSignatureSpan">superagent.</span>Request
@@ -2811,9 +2811,9 @@ if (1 == arguments.length) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.super_" id="apidoc.element.superagent.Request.super_">
         function <span class="apidocSignatureSpan">superagent.Request.</span>super_
@@ -2826,14 +2826,14 @@ if (1 == arguments.length) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.Request.prototype" id="apidoc.module.superagent.Request.prototype">module superagent.Request.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._appendQueryString" id="apidoc.element.superagent.Request.prototype._appendQueryString">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_appendQueryString
@@ -2877,9 +2877,9 @@ var self = this;
 var xhr = this.xhr = request.getXHR();
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._emitResponse" id="apidoc.element.superagent.Request.prototype._emitResponse">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_emitResponse
@@ -2900,9 +2900,9 @@ var xhr = this.xhr = request.getXHR();
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._end" id="apidoc.element.superagent.Request.prototype._end">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_end
@@ -3070,9 +3070,9 @@ var xhr = this.xhr = request.getXHR();
 var data = this._formData || this._data;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._getFormData" id="apidoc.element.superagent.Request.prototype._getFormData">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_getFormData
@@ -3109,9 +3109,9 @@ if (!this._formData) {
   this._formData = new root.FormData();
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._isHost" id="apidoc.element.superagent.Request.prototype._isHost">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_isHost
@@ -3130,7 +3130,7 @@ if (!this._formData) {
 if (this._withCredentials) xhr.withCredentials = true;
 
 // body
-if (!this._formData &#x26;&#x26; &#x27;GET&#x27; != this.method &#x26;&#x26; &#x27;HEAD&#x27; != this.method &#x26;&#x26; &#x27;\
+if (!this._formData &#x26;&#x26; &#x27;GET&#x27; != this.method &#x26;&#x26; &#x27;HEAD&#x27; != this.method &#x26;&#x26; &#x27;
 string&#x27; != typeof data &#x26;&#x26; !this.<span class="apidocCodeKeywordSpan">_isHost</span>(data)) {
   // serialize stuff
   var contentType = this._header[&#x27;content-type&#x27;];
@@ -3141,9 +3141,9 @@ string&#x27; != typeof data &#x26;&#x26; !this.<span class="apidocCodeKeywordSpa
   if (serialize) data = serialize(data);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._isResponseOK" id="apidoc.element.superagent.Request.prototype._isResponseOK">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_isResponseOK
@@ -3180,9 +3180,9 @@ try {
   new_err = e; // #985 touching res may cause INVALID_STATE_ERR on old Android
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._pipeContinue" id="apidoc.element.superagent.Request.prototype._pipeContinue">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_pipeContinue
@@ -3216,9 +3216,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._redirect" id="apidoc.element.superagent.Request.prototype._redirect">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_redirect
@@ -3294,9 +3294,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._retry" id="apidoc.element.superagent.Request.prototype._retry">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_retry
@@ -3336,9 +3336,9 @@ if (err) {
   if (this._maxRetries) err.retries = this._retries - 1;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._setTimeouts" id="apidoc.element.superagent.Request.prototype._setTimeouts">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_setTimeouts
@@ -3380,9 +3380,9 @@ xhr.onreadystatechange = function(){
   }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._shouldUnzip" id="apidoc.element.superagent.Request.prototype._shouldUnzip">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_shouldUnzip
@@ -3407,9 +3407,9 @@ xhr.onreadystatechange = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype._timeoutError" id="apidoc.element.superagent.Request.prototype._timeoutError">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>_timeoutError
@@ -3447,9 +3447,9 @@ if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
   }, this._responseTimeout);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.abort" id="apidoc.element.superagent.Request.prototype.abort">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>abort
@@ -3486,9 +3486,9 @@ RequestBase.prototype.abort = function(){
 /**
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.accept" id="apidoc.element.superagent.Request.prototype.accept">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>accept
@@ -3519,9 +3519,9 @@ RequestBase.prototype.abort = function(){
 * @param {String} accept
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.agent" id="apidoc.element.superagent.Request.prototype.agent">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>agent
@@ -3536,9 +3536,9 @@ RequestBase.prototype.abort = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.attach" id="apidoc.element.superagent.Request.prototype.attach">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>attach
@@ -3577,7 +3577,7 @@ RequestBase.prototype.abort = function(){
 *
 * ``` js
 * request.post(&#x27;/upload&#x27;)
-*   .<span class="apidocCodeKeywordSpan">attach</span>(&#x27;content&#x27;, new Blob([&#x27;&#x3c;a id=&#x22;a&#x22;&#x3e;&#x3c;\
+*   .<span class="apidocCodeKeywordSpan">attach</span>(&#x27;content&#x27;, new Blob([&#x27;&#x3c;a id=&#x22;a&#x22;&#x3e;&#x3c;
 b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;text/html&#x22;}))
 *   .end(callback);
 * ```
@@ -3588,9 +3588,9 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
 * @return {Request} for chaining
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.auth" id="apidoc.element.superagent.Request.prototype.auth">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>auth
@@ -3606,12 +3606,12 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
   }
   switch (options.type) {
     case &#x27;bearer&#x27;:
-      return this.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + user);    
-      
+      return this.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + user);
+
     default: // &#x27;basic&#x27;
       if (!~user.indexOf(&#x27;:&#x27;)) user = user + &#x27;:&#x27;;
       var str = new Buffer(user + pass).toString(&#x27;base64&#x27;);
-      return this.set(&#x27;Authorization&#x27;, &#x27;Basic &#x27; + str);    
+      return this.set(&#x27;Authorization&#x27;, &#x27;Basic &#x27; + str);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -3621,11 +3621,11 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
       this.username = user;
       this.password = pass;
     break;
-      
-    case &#x27;bearer&#x27;: // usage would be .<span class="apidocCodeKeywordSpan">auth</span>(accessToken, { type: &#x27;beare\
-r&#x27; })
+
+    case &#x27;bearer&#x27;: // usage would be .<span class="apidocCodeKeywordSpan">auth</span>(accessToken, { type: &#x27;bearer
+&#x27; })
       this.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + user);
-    break;  
+    break;
   }
   return this;
 };
@@ -3633,9 +3633,9 @@ r&#x27; })
 /**
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.buffer" id="apidoc.element.superagent.Request.prototype.buffer">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>buffer
@@ -3649,9 +3649,9 @@ r&#x27; })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.ca" id="apidoc.element.superagent.Request.prototype.ca">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>ca
@@ -3665,9 +3665,9 @@ r&#x27; })
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.callback" id="apidoc.element.superagent.Request.prototype.callback">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>callback
@@ -3729,9 +3729,9 @@ try {
   if (!self._isResponseOK(res)) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.catch" id="apidoc.element.superagent.Request.prototype.catch">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>catch
@@ -3744,9 +3744,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.cert" id="apidoc.element.superagent.Request.prototype.cert">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>cert
@@ -3760,9 +3760,9 @@ try {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.clearTimeout" id="apidoc.element.superagent.Request.prototype.clearTimeout">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>clearTimeout
@@ -3795,9 +3795,9 @@ if (err) {
 fn(err, res);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.end" id="apidoc.element.superagent.Request.prototype.end">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>end
@@ -3837,9 +3837,9 @@ request
 Tested browsers:
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.field" id="apidoc.element.superagent.Request.prototype.field">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>field
@@ -3890,7 +3890,7 @@ Tested browsers:
 - Latest Android, iPhone
 - IE10 through latest. IE9 with polyfills.
 
-Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span\
+Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span
 >()`.
 
 Node 4 or later is required.
@@ -3900,9 +3900,9 @@ Node 4 or later is required.
 SuperAgent is easily extended via plugins.
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.get" id="apidoc.element.superagent.Request.prototype.get">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>get
@@ -3931,9 +3931,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.getHeader" id="apidoc.element.superagent.Request.prototype.getHeader">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>getHeader
@@ -3946,9 +3946,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.key" id="apidoc.element.superagent.Request.prototype.key">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>key
@@ -3962,9 +3962,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.ok" id="apidoc.element.superagent.Request.prototype.ok">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>ok
@@ -3979,9 +3979,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.parse" id="apidoc.element.superagent.Request.prototype.parse">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>parse
@@ -3995,9 +3995,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.pfx" id="apidoc.element.superagent.Request.prototype.pfx">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>pfx
@@ -4011,9 +4011,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.pipe" id="apidoc.element.superagent.Request.prototype.pipe">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>pipe
@@ -4029,9 +4029,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.query" id="apidoc.element.superagent.Request.prototype.query">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>query
@@ -4065,9 +4065,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.redirects" id="apidoc.element.superagent.Request.prototype.redirects">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>redirects
@@ -4081,9 +4081,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.request" id="apidoc.element.superagent.Request.prototype.request">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>request
@@ -4197,9 +4197,9 @@ RequestBase.prototype._retry = function() {
 };
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.responseType" id="apidoc.element.superagent.Request.prototype.responseType">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>responseType
@@ -4228,9 +4228,9 @@ RequestBase.prototype._retry = function() {
 */
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.retry" id="apidoc.element.superagent.Request.prototype.retry">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>retry
@@ -4248,9 +4248,9 @@ RequestBase.prototype._retry = function() {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.send" id="apidoc.element.superagent.Request.prototype.send">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>send
@@ -4263,8 +4263,7 @@ RequestBase.prototype._retry = function() {
   var type = this._header[&#x27;content-type&#x27;];
 
   if (this._formData) {
-    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;\
-);
+    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
   }
 
   if (isObj &#x26;&#x26; !this._data) {
@@ -4308,8 +4307,8 @@ RequestBase.prototype._retry = function() {
     <li>example usage<pre class="apidocCodePre">...
 ```
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -4323,9 +4322,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.serialize" id="apidoc.element.superagent.Request.prototype.serialize">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>serialize
@@ -4339,9 +4338,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.set" id="apidoc.element.superagent.Request.prototype.set">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>set
@@ -4362,8 +4361,8 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -4379,9 +4378,9 @@ request
 ## Supported browsers and Node versions
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.sortQuery" id="apidoc.element.superagent.Request.prototype.sortQuery">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>sortQuery
@@ -4412,9 +4411,9 @@ request
 *         .sortQuery(function(a, b){
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.then" id="apidoc.element.superagent.Request.prototype.then">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>then
@@ -4426,8 +4425,8 @@ request
   if (!this._fullfilledPromise) {
     var self = this;
     if (this._endCalled) {
-      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() i\
-f you use promises&#x22;);
+      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
+ you use promises&#x22;);
     }
     this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
       self.end(function(err, res){
@@ -4445,7 +4444,7 @@ RequestBase.prototype.then = function then(resolve, reject) {
 if (!this._fullfilledPromise) {
   var self = this;
   if (this._endCalled) {
-    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">\
+    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
 then</span>() were called. Never call .end() if you use promises&#x22;);
   }
   this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
@@ -4456,9 +4455,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.timeout" id="apidoc.element.superagent.Request.prototype.timeout">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>timeout
@@ -4489,9 +4488,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.toJSON" id="apidoc.element.superagent.Request.prototype.toJSON">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>toJSON
@@ -4509,9 +4508,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.type" id="apidoc.element.superagent.Request.prototype.type">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>type
@@ -4542,9 +4541,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 *        .end(callback);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.unset" id="apidoc.element.superagent.Request.prototype.unset">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>unset
@@ -4575,9 +4574,9 @@ delete this._header[field.toLowerCase()];
 delete this.header[field];
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.use" id="apidoc.element.superagent.Request.prototype.use">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>use
@@ -4607,9 +4606,9 @@ request
 Existing plugins:
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.withCredentials" id="apidoc.element.superagent.Request.prototype.withCredentials">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>withCredentials
@@ -4625,9 +4624,9 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Request.prototype.write" id="apidoc.element.superagent.Request.prototype.write">
         function <span class="apidocSignatureSpan">superagent.Request.prototype.</span>write
@@ -4644,14 +4643,14 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.Response" id="apidoc.module.superagent.Response">module superagent.Response</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.Response" id="apidoc.element.superagent.Response.Response">
         function <span class="apidocSignatureSpan">superagent.</span>Response
@@ -4679,9 +4678,9 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.super_" id="apidoc.element.superagent.Response.super_">
         function <span class="apidocSignatureSpan">superagent.Response.</span>super_
@@ -4694,14 +4693,14 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.Response.prototype" id="apidoc.module.superagent.Response.prototype">module superagent.Response.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype._setHeaderProperties" id="apidoc.element.superagent.Response.prototype._setHeaderProperties">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>_setHeaderProperties
@@ -4750,9 +4749,9 @@ if (null === this.text &#x26;&#x26; req._responseType) {
     : null;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype._setStatusProperties" id="apidoc.element.superagent.Response.prototype._setStatusProperties">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>_setStatusProperties
@@ -4803,9 +4802,9 @@ this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content
 this._setHeaderProperties(this.header);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.destroy" id="apidoc.element.superagent.Response.prototype.destroy">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>destroy
@@ -4818,9 +4817,9 @@ this._setHeaderProperties(this.header);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.get" id="apidoc.element.superagent.Response.prototype.get">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>get
@@ -4849,9 +4848,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.pause" id="apidoc.element.superagent.Response.prototype.pause">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>pause
@@ -4864,9 +4863,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.resume" id="apidoc.element.superagent.Response.prototype.resume">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>resume
@@ -4879,9 +4878,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.setStatusProperties" id="apidoc.element.superagent.Response.prototype.setStatusProperties">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>setStatusProperties
@@ -4895,9 +4894,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.toError" id="apidoc.element.superagent.Response.prototype.toError">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>toError
@@ -4937,9 +4936,9 @@ this.badRequest = 400 == status;
 this.unauthorized = 401 == status;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.Response.prototype.toJSON" id="apidoc.element.superagent.Response.prototype.toJSON">
         function <span class="apidocSignatureSpan">superagent.Response.prototype.</span>toJSON
@@ -4957,14 +4956,14 @@ this.unauthorized = 401 == status;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.agent" id="apidoc.module.superagent.agent">module superagent.agent</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.agent" id="apidoc.element.superagent.agent.agent">
         function <span class="apidocSignatureSpan">superagent.</span>agent
@@ -4984,14 +4983,14 @@ this.unauthorized = 401 == status;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.agent.prototype" id="apidoc.module.superagent.agent.prototype">module superagent.agent.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype._attachCookies" id="apidoc.element.superagent.agent.prototype._attachCookies">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>_attachCookies
@@ -5007,9 +5006,9 @@ this.unauthorized = 401 == status;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype._saveCookies" id="apidoc.element.superagent.agent.prototype._saveCookies">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>_saveCookies
@@ -5023,9 +5022,9 @@ this.unauthorized = 401 == status;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.acl" id="apidoc.element.superagent.agent.prototype.acl">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>acl
@@ -5050,9 +5049,9 @@ this.unauthorized = 401 == status;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.bind" id="apidoc.element.superagent.agent.prototype.bind">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>bind
@@ -5090,13 +5089,13 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   } catch(e) {
     // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn&#x27;t exist.
     // Reported here:
-    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web\
+    // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web
 -worker-context
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.checkout" id="apidoc.element.superagent.agent.prototype.checkout">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>checkout
@@ -5121,9 +5120,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.connect" id="apidoc.element.superagent.agent.prototype.connect">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>connect
@@ -5148,9 +5147,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.copy" id="apidoc.element.superagent.agent.prototype.copy">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>copy
@@ -5175,9 +5174,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.del" id="apidoc.element.superagent.agent.prototype.del">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>del
@@ -5202,9 +5201,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.delete" id="apidoc.element.superagent.agent.prototype.delete">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>delete
@@ -5229,9 +5228,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.get" id="apidoc.element.superagent.agent.prototype.get">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>get
@@ -5272,9 +5271,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.head" id="apidoc.element.superagent.agent.prototype.head">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>head
@@ -5299,9 +5298,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.link" id="apidoc.element.superagent.agent.prototype.link">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>link
@@ -5326,9 +5325,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.lock" id="apidoc.element.superagent.agent.prototype.lock">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>lock
@@ -5353,9 +5352,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.m-search" id="apidoc.element.superagent.agent.prototype.m-search">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>m-search
@@ -5380,9 +5379,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.merge" id="apidoc.element.superagent.agent.prototype.merge">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>merge
@@ -5407,9 +5406,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.mkactivity" id="apidoc.element.superagent.agent.prototype.mkactivity">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkactivity
@@ -5434,9 +5433,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.mkcalendar" id="apidoc.element.superagent.agent.prototype.mkcalendar">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkcalendar
@@ -5461,9 +5460,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.mkcol" id="apidoc.element.superagent.agent.prototype.mkcol">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>mkcol
@@ -5488,9 +5487,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.move" id="apidoc.element.superagent.agent.prototype.move">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>move
@@ -5515,9 +5514,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.notify" id="apidoc.element.superagent.agent.prototype.notify">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>notify
@@ -5542,9 +5541,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.options" id="apidoc.element.superagent.agent.prototype.options">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>options
@@ -5569,9 +5568,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.patch" id="apidoc.element.superagent.agent.prototype.patch">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>patch
@@ -5596,9 +5595,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.post" id="apidoc.element.superagent.agent.prototype.post">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>post
@@ -5625,8 +5624,8 @@ request
 $ npm install superagent
 ```
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -5640,9 +5639,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.propfind" id="apidoc.element.superagent.agent.prototype.propfind">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>propfind
@@ -5667,9 +5666,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.proppatch" id="apidoc.element.superagent.agent.prototype.proppatch">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>proppatch
@@ -5694,9 +5693,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.purge" id="apidoc.element.superagent.agent.prototype.purge">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>purge
@@ -5721,9 +5720,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.put" id="apidoc.element.superagent.agent.prototype.put">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>put
@@ -5748,9 +5747,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.rebind" id="apidoc.element.superagent.agent.prototype.rebind">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>rebind
@@ -5775,9 +5774,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.report" id="apidoc.element.superagent.agent.prototype.report">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>report
@@ -5802,9 +5801,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.search" id="apidoc.element.superagent.agent.prototype.search">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>search
@@ -5829,9 +5828,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.subscribe" id="apidoc.element.superagent.agent.prototype.subscribe">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>subscribe
@@ -5856,9 +5855,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.trace" id="apidoc.element.superagent.agent.prototype.trace">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>trace
@@ -5883,9 +5882,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.unbind" id="apidoc.element.superagent.agent.prototype.unbind">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unbind
@@ -5910,9 +5909,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.unlink" id="apidoc.element.superagent.agent.prototype.unlink">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unlink
@@ -5937,9 +5936,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.unlock" id="apidoc.element.superagent.agent.prototype.unlock">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unlock
@@ -5964,9 +5963,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.agent.prototype.unsubscribe" id="apidoc.element.superagent.agent.prototype.unsubscribe">
         function <span class="apidocSignatureSpan">superagent.agent.prototype.</span>unsubscribe
@@ -5991,14 +5990,14 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.client" id="apidoc.module.superagent.client">module superagent.client</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.client" id="apidoc.element.superagent.client.client">
         function <span class="apidocSignatureSpan">superagent.</span>client
@@ -6021,9 +6020,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.Request" id="apidoc.element.superagent.client.Request">
         function <span class="apidocSignatureSpan">superagent.client.</span>Request
@@ -6102,9 +6101,9 @@ if (1 == arguments.length) {
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.Response" id="apidoc.element.superagent.client.Response">
         function <span class="apidocSignatureSpan">superagent.client.</span>Response
@@ -6116,8 +6115,8 @@ if (1 == arguments.length) {
   this.req = req;
   this.xhr = this.req.xhr;
   // responseText is accessible only if responseType is &#x27;&#x27; or &#x27;text&#x27; and on older browsers
-  this.text = ((this.req.method !=&#x27;HEAD&#x27; &#x26;&#x26; (this.xhr.responseType === &#x27;&#x27; || this.xhr.responseType === &#x27;text&#x27;)) || typeof this.x\
-hr.responseType === &#x27;undefined&#x27;)
+  this.text = ((this.req.method !=&#x27;HEAD&#x27; &#x26;&#x26; (this.xhr.responseType === &#x27;&#x27; || this.xhr.responseType === &#x27;text&#x27;)) || typeof this.xhr
+.responseType === &#x27;undefined&#x27;)
      ? this.xhr.responseText
      : null;
   this.statusText = this.req.xhr.statusText;
@@ -6144,9 +6143,9 @@ hr.responseType === &#x27;undefined&#x27;)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.del" id="apidoc.element.superagent.client.del">
         function <span class="apidocSignatureSpan">superagent.client.</span>del
@@ -6163,9 +6162,9 @@ hr.responseType === &#x27;undefined&#x27;)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.delete" id="apidoc.element.superagent.client.delete">
         function <span class="apidocSignatureSpan">superagent.client.</span>delete
@@ -6182,9 +6181,9 @@ hr.responseType === &#x27;undefined&#x27;)
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.get" id="apidoc.element.superagent.client.get">
         function <span class="apidocSignatureSpan">superagent.client.</span>get
@@ -6217,9 +6216,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.getXHR" id="apidoc.element.superagent.client.getXHR">
         function <span class="apidocSignatureSpan">superagent.client.</span>getXHR
@@ -6258,9 +6257,9 @@ xhr.onreadystatechange = function(){
   var readyState = xhr.readyState;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.head" id="apidoc.element.superagent.client.head">
         function <span class="apidocSignatureSpan">superagent.client.</span>head
@@ -6277,9 +6276,9 @@ xhr.onreadystatechange = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.options" id="apidoc.element.superagent.client.options">
         function <span class="apidocSignatureSpan">superagent.client.</span>options
@@ -6296,9 +6295,9 @@ xhr.onreadystatechange = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.parseString" id="apidoc.element.superagent.client.parseString">
         function <span class="apidocSignatureSpan">superagent.client.</span>parseString
@@ -6327,9 +6326,9 @@ xhr.onreadystatechange = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.patch" id="apidoc.element.superagent.client.patch">
         function <span class="apidocSignatureSpan">superagent.client.</span>patch
@@ -6346,9 +6345,9 @@ xhr.onreadystatechange = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.post" id="apidoc.element.superagent.client.post">
         function <span class="apidocSignatureSpan">superagent.client.</span>post
@@ -6367,8 +6366,8 @@ xhr.onreadystatechange = function(){
 $ npm install superagent
 ```
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -6382,9 +6381,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.put" id="apidoc.element.superagent.client.put">
         function <span class="apidocSignatureSpan">superagent.client.</span>put
@@ -6401,9 +6400,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.client.serializeObject" id="apidoc.element.superagent.client.serializeObject">
         function <span class="apidocSignatureSpan">superagent.client.</span>serializeObject
@@ -6421,20 +6420,20 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.parse" id="apidoc.module.superagent.parse">module superagent.parse</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.parse.image" id="apidoc.element.superagent.parse.image">
         function <span class="apidocSignatureSpan">superagent.parse.</span>image
@@ -6454,9 +6453,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.parse.text" id="apidoc.element.superagent.parse.text">
         function <span class="apidocSignatureSpan">superagent.parse.</span>text
@@ -6472,14 +6471,14 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.request_base" id="apidoc.module.superagent.request_base">module superagent.request_base</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.request_base" id="apidoc.element.superagent.request_base.request_base">
         function <span class="apidocSignatureSpan">superagent.</span>request_base
@@ -6492,14 +6491,14 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.request_base.prototype" id="apidoc.module.superagent.request_base.prototype">module superagent.request_base.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype._isResponseOK" id="apidoc.element.superagent.request_base.prototype._isResponseOK">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_isResponseOK
@@ -6536,9 +6535,9 @@ try {
   new_err = e; // #985 touching res may cause INVALID_STATE_ERR on old Android
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype._retry" id="apidoc.element.superagent.request_base.prototype._retry">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_retry
@@ -6578,9 +6577,9 @@ if (err) {
   if (this._maxRetries) err.retries = this._retries - 1;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype._setTimeouts" id="apidoc.element.superagent.request_base.prototype._setTimeouts">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_setTimeouts
@@ -6622,9 +6621,9 @@ xhr.onreadystatechange = function(){
   }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype._timeoutError" id="apidoc.element.superagent.request_base.prototype._timeoutError">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>_timeoutError
@@ -6662,9 +6661,9 @@ if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
   }, this._responseTimeout);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.abort" id="apidoc.element.superagent.request_base.prototype.abort">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>abort
@@ -6701,9 +6700,9 @@ RequestBase.prototype.abort = function(){
 /**
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.catch" id="apidoc.element.superagent.request_base.prototype.catch">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>catch
@@ -6716,9 +6715,9 @@ RequestBase.prototype.abort = function(){
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.clearTimeout" id="apidoc.element.superagent.request_base.prototype.clearTimeout">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>clearTimeout
@@ -6751,9 +6750,9 @@ if (err) {
 fn(err, res);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.field" id="apidoc.element.superagent.request_base.prototype.field">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>field
@@ -6804,7 +6803,7 @@ Tested browsers:
 - Latest Android, iPhone
 - IE10 through latest. IE9 with polyfills.
 
-Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span\
+Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span
 >()`.
 
 Node 4 or later is required.
@@ -6814,9 +6813,9 @@ Node 4 or later is required.
 SuperAgent is easily extended via plugins.
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.get" id="apidoc.element.superagent.request_base.prototype.get">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>get
@@ -6845,9 +6844,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.getHeader" id="apidoc.element.superagent.request_base.prototype.getHeader">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>getHeader
@@ -6860,9 +6859,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.ok" id="apidoc.element.superagent.request_base.prototype.ok">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>ok
@@ -6877,9 +6876,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.parse" id="apidoc.element.superagent.request_base.prototype.parse">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>parse
@@ -6893,9 +6892,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.redirects" id="apidoc.element.superagent.request_base.prototype.redirects">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>redirects
@@ -6909,9 +6908,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.responseType" id="apidoc.element.superagent.request_base.prototype.responseType">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>responseType
@@ -6940,9 +6939,9 @@ request
 */
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.retry" id="apidoc.element.superagent.request_base.prototype.retry">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>retry
@@ -6960,9 +6959,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.send" id="apidoc.element.superagent.request_base.prototype.send">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>send
@@ -6975,8 +6974,7 @@ request
   var type = this._header[&#x27;content-type&#x27;];
 
   if (this._formData) {
-    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;\
-);
+    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
   }
 
   if (isObj &#x26;&#x26; !this._data) {
@@ -7020,8 +7018,8 @@ request
     <li>example usage<pre class="apidocCodePre">...
 ```
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -7035,9 +7033,9 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.serialize" id="apidoc.element.superagent.request_base.prototype.serialize">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>serialize
@@ -7051,9 +7049,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.set" id="apidoc.element.superagent.request_base.prototype.set">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>set
@@ -7074,8 +7072,8 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
-Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmed\
-ia/superagent/wiki/SuperAgent-for-Webpack)
+Works with [browserify](https://github.com/substack/node-browserify) and should work with [webpack](https://github.com/visionmedia
+/superagent/wiki/SuperAgent-for-Webpack)
 
 ```js
 request
@@ -7091,9 +7089,9 @@ request
 ## Supported browsers and Node versions
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.sortQuery" id="apidoc.element.superagent.request_base.prototype.sortQuery">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>sortQuery
@@ -7124,9 +7122,9 @@ request
 *         .sortQuery(function(a, b){
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.then" id="apidoc.element.superagent.request_base.prototype.then">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>then
@@ -7138,8 +7136,8 @@ request
   if (!this._fullfilledPromise) {
     var self = this;
     if (this._endCalled) {
-      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() i\
-f you use promises&#x22;);
+      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
+ you use promises&#x22;);
     }
     this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
       self.end(function(err, res){
@@ -7157,7 +7155,7 @@ RequestBase.prototype.then = function then(resolve, reject) {
 if (!this._fullfilledPromise) {
   var self = this;
   if (this._endCalled) {
-    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">\
+    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
 then</span>() were called. Never call .end() if you use promises&#x22;);
   }
   this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
@@ -7168,9 +7166,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.timeout" id="apidoc.element.superagent.request_base.prototype.timeout">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>timeout
@@ -7201,9 +7199,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.toJSON" id="apidoc.element.superagent.request_base.prototype.toJSON">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>toJSON
@@ -7221,9 +7219,9 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.unset" id="apidoc.element.superagent.request_base.prototype.unset">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>unset
@@ -7254,9 +7252,9 @@ delete this._header[field.toLowerCase()];
 delete this.header[field];
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.use" id="apidoc.element.superagent.request_base.prototype.use">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>use
@@ -7286,9 +7284,9 @@ request
 Existing plugins:
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.request_base.prototype.withCredentials" id="apidoc.element.superagent.request_base.prototype.withCredentials">
         function <span class="apidocSignatureSpan">superagent.request_base.prototype.</span>withCredentials
@@ -7304,14 +7302,14 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.response_base" id="apidoc.module.superagent.response_base">module superagent.response_base</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.response_base.response_base" id="apidoc.element.superagent.response_base.response_base">
         function <span class="apidocSignatureSpan">superagent.</span>response_base
@@ -7324,14 +7322,14 @@ Existing plugins:
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.response_base.prototype" id="apidoc.module.superagent.response_base.prototype">module superagent.response_base.prototype</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.response_base.prototype._setHeaderProperties" id="apidoc.element.superagent.response_base.prototype._setHeaderProperties">
         function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>_setHeaderProperties
@@ -7380,9 +7378,9 @@ if (null === this.text &#x26;&#x26; req._responseType) {
     : null;
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.response_base.prototype._setStatusProperties" id="apidoc.element.superagent.response_base.prototype._setStatusProperties">
         function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>_setStatusProperties
@@ -7433,9 +7431,9 @@ this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content
 this._setHeaderProperties(this.header);
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.response_base.prototype.get" id="apidoc.element.superagent.response_base.prototype.get">
         function <span class="apidocSignatureSpan">superagent.response_base.prototype.</span>get
@@ -7464,19 +7462,19 @@ request
 ```
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.serialize" id="apidoc.module.superagent.serialize">module superagent.serialize</a></h1>
-    
+
 </div>
 
 <div class="apidocSectionDiv">
 <h1><a href="#apidoc.module.superagent.utils" id="apidoc.module.superagent.utils">module superagent.utils</a></h1>
-    
-    
+
+
     <h2>
         <a href="#apidoc.element.superagent.utils.cleanHeader" id="apidoc.element.superagent.utils.cleanHeader">
         function <span class="apidocSignatureSpan">superagent.utils.</span>cleanHeader
@@ -7496,9 +7494,9 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.utils.params" id="apidoc.element.superagent.utils.params">
         function <span class="apidocSignatureSpan">superagent.utils.</span>params
@@ -7534,9 +7532,9 @@ try {
     if (header.link) {
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.utils.parseLinks" id="apidoc.element.superagent.utils.parseLinks">
         function <span class="apidocSignatureSpan">superagent.utils.</span>parseLinks
@@ -7571,9 +7569,9 @@ try {
 /**
 ...</pre></li>
     </ul>
-    
-    
-    
+
+
+
     <h2>
         <a href="#apidoc.element.superagent.utils.type" id="apidoc.element.superagent.utils.type">
         function <span class="apidocSignatureSpan">superagent.utils.</span>type
@@ -7602,8 +7600,8 @@ try {
 *        .end(callback);
 ...</pre></li>
     </ul>
-    
-    
+
+
 </div>
 
 <div class="apidocFooterDiv">
