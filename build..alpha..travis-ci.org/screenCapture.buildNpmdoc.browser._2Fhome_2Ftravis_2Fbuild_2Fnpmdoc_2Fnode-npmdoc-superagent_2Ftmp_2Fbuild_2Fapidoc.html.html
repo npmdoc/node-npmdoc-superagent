@@ -1,4 +1,4 @@
-<div class="apidocDiv">
+<html><head></head><body><div class="apidocDiv">
 <style>
 /*csslint
 */
@@ -47,17 +47,10 @@
 }
 </style>
 <h1>api documentation for
-    <a
-
-        href="https://github.com/visionmedia/superagent#readme"
-
-    >superagent (v3.5.2)</a>
+    <a href="https://github.com/visionmedia/superagent#readme">superagent (v3.5.2)</a>
 </h1>
-<h4>elegant & feature rich browser / node HTTP with a fluent API</h4>
-<div class="apidocSectionDiv"><a
-    href="#apidoc.tableOfContents"
-    id="apidoc.tableOfContents"
-><h1>table of contents</h1></a><ol>
+<h4>elegant &amp; feature rich browser / node HTTP with a fluent API</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
 
     <li class="apidocModuleLi"><a href="#apidoc.module.superagent">module superagent</a><ol>
 
@@ -2064,13 +2057,13 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">superagent = function (method, url) {
   // callback
-  if (&#x27;function&#x27; == typeof url) {
-    return new exports.Request(&#x27;GET&#x27;, method).end(url);
+  if ('function' == typeof url) {
+    return new exports.Request('GET', method).end(url);
   }
 
   // url first
   if (1 == arguments.length) {
-    return new exports.Request(&#x27;GET&#x27;, method);
+    return new exports.Request('GET', method);
   }
 
   return new exports.Request(method, url);
@@ -2089,7 +2082,7 @@
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Request(method, url) {
   Stream.call(this);
-  if (&#x27;string&#x27; != typeof url) url = format(url);
+  if ('string' != typeof url) url = format(url);
   this._agent = false;
   this._formData = null;
   this.method = method;
@@ -2097,13 +2090,13 @@
   _initHeaders(this);
   this.writable = true;
   this._redirects = 0;
-  this.redirects(method === &#x27;HEAD&#x27; ? 0 : 5);
-  this.cookies = &#x27;&#x27;;
+  this.redirects(method === 'HEAD' ? 0 : 5);
+  this.cookies = '';
   this.qs = {};
   this.qsRaw = [];
   this._redirectList = [];
   this._streamRequest = false;
-  this.once(&#x27;end&#x27;, this.clearTimeout.bind(this));
+  this.once('end', this.clearTimeout.bind(this));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 /**
@@ -2112,13 +2105,13 @@
 
 var request = exports = module.exports = function(method, url) {
 // callback
-if (&#x27;function&#x27; == typeof url) {
-  return new exports.<span class="apidocCodeKeywordSpan">Request</span>(&#x27;GET&#x27;, method).end(url);
+if ('function' == typeof url) {
+  return new exports.<span class="apidocCodeKeywordSpan">Request</span>('GET', method).end(url);
 }
 
 // url first
 if (1 == arguments.length) {
-  return new exports.Request(&#x27;GET&#x27;, method);
+  return new exports.Request('GET', method);
 }
 ...</pre></li>
     </ul>
@@ -2140,15 +2133,15 @@ if (1 == arguments.length) {
   this.text = res.text;
   this.body = res.body !== undefined ? res.body : {};
   this.files = res.files || {};
-  this.buffered = &#x27;string&#x27; == typeof this.text;
+  this.buffered = 'string' == typeof this.text;
   this.header = this.headers = res.headers;
   this._setStatusProperties(res.statusCode);
   this._setHeaderProperties(this.header);
   this.setEncoding = res.setEncoding.bind(res);
-  res.on(&#x27;data&#x27;, this.emit.bind(this, &#x27;data&#x27;));
-  res.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;end&#x27;));
-  res.on(&#x27;close&#x27;, this.emit.bind(this, &#x27;close&#x27;));
-  res.on(&#x27;error&#x27;, this.emit.bind(this, &#x27;error&#x27;));
+  res.on('data', this.emit.bind(this, 'data'));
+  res.on('end', this.emit.bind(this, 'end'));
+  res.on('close', this.emit.bind(this, 'close'));
+  res.on('error', this.emit.bind(this, 'error'));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -2164,9 +2157,9 @@ if (1 == arguments.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">acl = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2205,25 +2198,25 @@ if (1 == arguments.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">bind = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     e.percent = e.loaded / e.total * 100;
   }
   e.direction = direction;
-  self.emit(&#x27;progress&#x27;, e);
+  self.emit('progress', e);
 }
-if (this.hasListeners(&#x27;progress&#x27;)) {
+if (this.hasListeners('progress')) {
   try {
-    xhr.onprogress = handleProgress.<span class="apidocCodeKeywordSpan">bind</span>(null, &#x27;download&#x27;);
+    xhr.onprogress = handleProgress.<span class="apidocCodeKeywordSpan">bind</span>(null, 'download');
     if (xhr.upload) {
-      xhr.upload.onprogress = handleProgress.bind(null, &#x27;upload&#x27;);
+      xhr.upload.onprogress = handleProgress.bind(null, 'upload');
     }
   } catch(e) {
-    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn&#x27;t exist.
+    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
     // Reported here:
     // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web
 -worker-context
@@ -2241,9 +2234,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">checkout = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2260,13 +2253,13 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">client = function (method, url) {
   // callback
-  if (&#x27;function&#x27; == typeof url) {
-    return new exports.Request(&#x27;GET&#x27;, method).end(url);
+  if ('function' == typeof url) {
+    return new exports.Request('GET', method).end(url);
   }
 
   // url first
   if (1 == arguments.length) {
-    return new exports.Request(&#x27;GET&#x27;, method);
+    return new exports.Request('GET', method);
   }
 
   return new exports.Request(method, url);
@@ -2285,9 +2278,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">connect = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2304,9 +2297,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">copy = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2323,9 +2316,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">del = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2342,9 +2335,9 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">delete = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2361,21 +2354,21 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">get = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -2396,9 +2389,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">head = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2415,9 +2408,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">link = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2434,9 +2427,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">lock = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2453,9 +2446,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">m-search = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2472,9 +2465,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">merge = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2491,9 +2484,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mkactivity = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2510,9 +2503,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mkcalendar = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2529,9 +2522,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">mkcol = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2548,9 +2541,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">move = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2567,9 +2560,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">notify = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2586,9 +2579,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">options = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2605,9 +2598,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">patch = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2624,9 +2617,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">post = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -2638,10 +2631,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .<span class="apidocCodeKeywordSpan">post</span>(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .<span class="apidocCodeKeywordSpan">post</span>('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -2660,9 +2653,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">propfind = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2679,9 +2672,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">proppatch = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2698,9 +2691,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">purge = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2717,9 +2710,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">put = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2736,9 +2729,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">rebind = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2755,9 +2748,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">report = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2804,9 +2797,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">search = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2823,9 +2816,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">subscribe = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2842,9 +2835,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">trace = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2861,9 +2854,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unbind = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2880,9 +2873,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unlink = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2899,9 +2892,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unlock = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2918,9 +2911,9 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">unsubscribe = function (url, data, fn){
   var req = request(method, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -2960,7 +2953,7 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function Request(method, url) {
   Stream.call(this);
-  if (&#x27;string&#x27; != typeof url) url = format(url);
+  if ('string' != typeof url) url = format(url);
   this._agent = false;
   this._formData = null;
   this.method = method;
@@ -2968,13 +2961,13 @@ request
   _initHeaders(this);
   this.writable = true;
   this._redirects = 0;
-  this.redirects(method === &#x27;HEAD&#x27; ? 0 : 5);
-  this.cookies = &#x27;&#x27;;
+  this.redirects(method === 'HEAD' ? 0 : 5);
+  this.cookies = '';
   this.qs = {};
   this.qsRaw = [];
   this._redirectList = [];
   this._streamRequest = false;
-  this.once(&#x27;end&#x27;, this.clearTimeout.bind(this));
+  this.once('end', this.clearTimeout.bind(this));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 /**
@@ -2983,13 +2976,13 @@ request
 
 var request = exports = module.exports = function(method, url) {
 // callback
-if (&#x27;function&#x27; == typeof url) {
-  return new exports.<span class="apidocCodeKeywordSpan">Request</span>(&#x27;GET&#x27;, method).end(url);
+if ('function' == typeof url) {
+  return new exports.<span class="apidocCodeKeywordSpan">Request</span>('GET', method).end(url);
 }
 
 // url first
 if (1 == arguments.length) {
-  return new exports.Request(&#x27;GET&#x27;, method);
+  return new exports.Request('GET', method);
 }
 ...</pre></li>
     </ul>
@@ -3025,19 +3018,19 @@ if (1 == arguments.length) {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_appendQueryString = function (req){
   var query = qs.stringify(this.qs, { indices: false, strictNullHandling: true });
-  query += ((query.length &#x26;&#x26; this.qsRaw.length) ? &#x27;&#x26;&#x27; : &#x27;&#x27;) + this.qsRaw.join(&#x27;&#x26;&#x27;);
-  req.path += query.length ? (~req.path.indexOf(&#x27;?&#x27;) ? &#x27;&#x26;&#x27; : &#x27;?&#x27;) + query : &#x27;&#x27;;
+  query += ((query.length &amp;&amp; this.qsRaw.length) ? '&amp;' : '') + this.qsRaw.join('&amp;');
+  req.path += query.length ? (~req.path.indexOf('?') ? '&amp;' : '?') + query : '';
 
   if (this._sort) {
-    var index = req.path.indexOf(&#x27;?&#x27;);
-    if (index &#x3e;= 0) {
-      var queryArr = req.path.substring(index + 1).split(&#x27;&#x26;&#x27;);
+    var index = req.path.indexOf('?');
+    if (index &gt;= 0) {
+      var queryArr = req.path.substring(index + 1).split('&amp;');
       if (isFunction(this._sort)) {
         queryArr.sort(this._sort);
       } else {
         queryArr.sort();
       }
-      req.path = req.path.substring(0, index) + &#x27;?&#x27; + queryArr.join(&#x27;&#x26;&#x27;);
+      req.path = req.path.substring(0, index) + '?' + queryArr.join('&amp;');
     }
   }
 }</pre></li>
@@ -3077,7 +3070,7 @@ var xhr = this.xhr = request.getXHR();
       response.body = body;
     }
     response.files = files;
-    this.emit(&#x27;response&#x27;, response);
+    this.emit('response', response);
     return response;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -3102,28 +3095,28 @@ var xhr = this.xhr = request.getXHR();
   this._setTimeouts();
 
   // body
-  if (&#x27;HEAD&#x27; != method &#x26;&#x26; !req._headerSent) {
+  if ('HEAD' != method &amp;&amp; !req._headerSent) {
     // serialize stuff
-    if (&#x27;string&#x27; != typeof data) {
-      var contentType = req.getHeader(&#x27;Content-Type&#x27;)
+    if ('string' != typeof data) {
+      var contentType = req.getHeader('Content-Type')
       // Parse out just the content type from the header (ignore the charset)
-      if (contentType) contentType = contentType.split(&#x27;;&#x27;)[0]
+      if (contentType) contentType = contentType.split(';')[0]
       var serialize = exports.serialize[contentType];
-      if (!serialize &#x26;&#x26; isJSON(contentType)) {
-        serialize = exports.serialize[&#x27;application/json&#x27;];
+      if (!serialize &amp;&amp; isJSON(contentType)) {
+        serialize = exports.serialize['application/json'];
       }
       if (serialize) data = serialize(data);
     }
 
     // content-length
-    if (data &#x26;&#x26; !req.getHeader(&#x27;Content-Length&#x27;)) {
-      req.setHeader(&#x27;Content-Length&#x27;, Buffer.isBuffer(data) ? data.length : Buffer.byteLength(data));
+    if (data &amp;&amp; !req.getHeader('Content-Length')) {
+      req.setHeader('Content-Length', Buffer.isBuffer(data) ? data.length : Buffer.byteLength(data));
     }
   }
 
   // response
-  req.once(&#x27;response&#x27;, function(res){
-    debug(&#x27;%s %s -&#x3e; %s&#x27;, self.method, self.url, res.statusCode);
+  req.once('response', function(res){
+    debug('%s %s -&gt; %s', self.method, self.url, res.statusCode);
 
     if (self._responseTimeoutTimer) {
       clearTimeout(self._responseTimeoutTimer);
@@ -3134,9 +3127,9 @@ var xhr = this.xhr = request.getXHR();
     }
 
     var max = self._maxRedirects;
-    var mime = utils.type(res.headers[&#x27;content-type&#x27;] || &#x27;&#x27;) || &#x27;text/plain&#x27;;
-    var type = mime.split(&#x27;/&#x27;)[0];
-    var multipart = &#x27;multipart&#x27; == type;
+    var mime = utils.type(res.headers['content-type'] || '') || 'text/plain';
+    var type = mime.split('/')[0];
+    var multipart = 'multipart' == type;
     var redirect = isRedirect(res.statusCode);
     var parser = self._parser;
     var responseType = self._responseType;
@@ -3144,12 +3137,12 @@ var xhr = this.xhr = request.getXHR();
     self.res = res;
 
     // redirect
-    if (redirect &#x26;&#x26; self._redirects++ != max) {
+    if (redirect &amp;&amp; self._redirects++ != max) {
       return self._redirect(res);
     }
 
-    if (&#x27;HEAD&#x27; == self.method) {
-      self.emit(&#x27;end&#x27;);
+    if ('HEAD' == self.method) {
+      self.emit('end');
       self.callback(null, self._emitResponse());
       return;
     }
@@ -3161,7 +3154,7 @@ var xhr = this.xhr = request.getXHR();
 
     if (!parser) {
       if (responseType) {
-        parser = exports.parse.image; // It&#x27;s actually a generic Buffer
+        parser = exports.parse.image; // It's actually a generic Buffer
         buffer = true;
       } else if (multipart) {
         var form = new formidable.IncomingForm();
@@ -3172,13 +3165,13 @@ var xhr = this.xhr = request.getXHR();
         buffer = true; // For backwards-compatibility buffering default is ad-hoc MIME-dependent
       } else if (exports.parse[mime]) {
         parser = exports.parse[mime];
-      } else if (&#x27;text&#x27; == type) {
+      } else if ('text' == type) {
         parser = exports.parse.text;
         buffer = (buffer !== false);
 
         // everyone wants their own white-labeled json
       } else if (isJSON(mime)) {
-        parser = exports.parse[&#x27;application/json&#x27;];
+        parser = exports.parse['application/json'];
         buffer = (buffer !== false);
       } else if (buffer) {
         parser = exports.parse.text;
@@ -3186,7 +3179,7 @@ var xhr = this.xhr = request.getXHR();
     }
 
     // by default only buffer text/*, json and messed up thing from hell
-    if (undefined === buffer &#x26;&#x26; isText(mime) || isJSON(mime)) {
+    if (undefined === buffer &amp;&amp; isText(mime) || isJSON(mime)) {
       buffer = true;
     }
 
@@ -3194,7 +3187,7 @@ var xhr = this.xhr = request.getXHR();
     if (parser) {
       try {
         // Unbuffered parsers are supposed to emit response early,
-        // which is weird BTW, because response.body won&#x27;t be there.
+        // which is weird BTW, because response.body won't be there.
         parserHandlesEnd = buffer;
 
         parser(res, function(err, obj, files) {
@@ -3204,13 +3197,13 @@ var xhr = this.xhr = request.getXHR();
           }
 
           // Intentional (non-timeout) abort is supposed to preserve partial response,
-          // even if it doesn&#x27;t parse.
-          if (err &#x26;&#x26; !self._aborted) {
+          // even if it doesn't parse.
+          if (err &amp;&amp; !self._aborted) {
             return self.callback(err);
           }
 
           if (parserHandlesEnd) {
-            self.emit(&#x27;end&#x27;);
+            self.emit('end');
             self.callback(null, self._emitResponse(obj, files));
           }
         });
@@ -3224,12 +3217,12 @@ var xhr = this.xhr = request.getXHR();
 
     // unbuffered
     if (!buffer) {
-      debug(&#x27;unbuffered %s %s&#x27;, self.method, self.url);
+      debug('unbuffered %s %s', self.method, self.url);
       self.callback(null, self._emitResponse());
       if (multipart) return // allow multipart to handle end event
-      res.once(&#x27;end&#x27;, function(){
-        debug(&#x27;end %s %s&#x27;, self.method, self.url);
-        self.emit(&#x27;end&#x27;);
+      res.once('end', function(){
+        debug('end %s %s', self.method, self.url);
+        self.emit('end');
       })
       return;
     }
@@ -3266,8 +3259,8 @@ var data = this._formData || this._data;
   if (!this._formData) {
     this._formData = new FormData();
     var that = this;
-    this._formData.on(&#x27;error&#x27;, function(err) {
-      that.emit(&#x27;error&#x27;, err);
+    this._formData.on('error', function(err) {
+      that.emit('error', err);
       that.abort();
     });
   }
@@ -3278,7 +3271,7 @@ var data = this._formData || this._data;
 Request.prototype.attach = function(field, file, options){
 if (file) {
   if (this._data) {
-    throw Error(&#x22;superagent can&#x27;t mix .send() and .attach()&#x22;);
+    throw Error("superagent can't mix .send() and .attach()");
   }
 
   this.<span class="apidocCodeKeywordSpan">_getFormData</span>().append(field, file, options || file.name);
@@ -3312,13 +3305,13 @@ if (!this._formData) {
 if (this._withCredentials) xhr.withCredentials = true;
 
 // body
-if (!this._formData &#x26;&#x26; &#x27;GET&#x27; != this.method &#x26;&#x26; &#x27;HEAD&#x27; != this.method &#x26;&#x26; &#x27;
-string&#x27; != typeof data &#x26;&#x26; !this.<span class="apidocCodeKeywordSpan">_isHost</span>(data)) {
+if (!this._formData &amp;&amp; 'GET' != this.method &amp;&amp; 'HEAD' != this.method &amp;&amp; '
+string' != typeof data &amp;&amp; !this.<span class="apidocCodeKeywordSpan">_isHost</span>(data)) {
   // serialize stuff
-  var contentType = this._header[&#x27;content-type&#x27;];
-  var serialize = this._serializer || request.serialize[contentType ? contentType.split(&#x27;;&#x27;)[0] : &#x27;&#x27;];
-  if (!serialize &#x26;&#x26; isJSON(contentType)) {
-    serialize = request.serialize[&#x27;application/json&#x27;];
+  var contentType = this._header['content-type'];
+  var serialize = this._serializer || request.serialize[contentType ? contentType.split(';')[0] : ''];
+  if (!serialize &amp;&amp; isJSON(contentType)) {
+    serialize = request.serialize['application/json'];
   }
   if (serialize) data = serialize(data);
 ...</pre></li>
@@ -3342,18 +3335,18 @@ string&#x27; != typeof data &#x26;&#x26; !this.<span class="apidocCodeKeywordSpa
     return this._okCallback(res);
   }
 
-  return res.status &#x3e;= 200 &#x26;&#x26; res.status &#x3c; 300;
+  return res.status &gt;= 200 &amp;&amp; res.status &lt; 300;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   return self.callback(err);
 }
 
-self.emit(&#x27;response&#x27;, res);
+self.emit('response', res);
 
 var new_err;
 try {
   if (!self.<span class="apidocCodeKeywordSpan">_isResponseOK</span>(res)) {
-    new_err = new Error(res.statusText || &#x27;Unsuccessful HTTP response&#x27;);
+    new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
     new_err.original = err;
     new_err.response = res;
     new_err.status = res.status;
@@ -3374,10 +3367,10 @@ try {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_pipeContinue = function (stream, options){
   var self = this;
-  this.req.once(&#x27;response&#x27;, function(res){
+  this.req.once('response', function(res){
     // redirect
     var redirect = isRedirect(res.statusCode);
-    if (redirect &#x26;&#x26; self._redirects++ != self._maxRedirects) {
+    if (redirect &amp;&amp; self._redirects++ != self._maxRedirects) {
       return self._redirect(res)._pipeContinue(stream, options);
     }
 
@@ -3390,8 +3383,8 @@ try {
     } else {
       res.pipe(stream, options);
     }
-    res.once(&#x27;end&#x27;, function(){
-      self.emit(&#x27;end&#x27;);
+    res.once('end', function(){
+      self.emit('end');
     });
   });
   return stream;
@@ -3411,10 +3404,10 @@ try {
     <li>description and source-code<pre class="apidocCodePre">_redirect = function (res){
   var url = res.headers.location;
   if (!url) {
-    return this.callback(new Error(&#x27;No location header for redirect&#x27;), res);
+    return this.callback(new Error('No location header for redirect'), res);
   }
 
-  debug(&#x27;redirect %s -&#x3e; %s&#x27;, this.url, url);
+  debug('redirect %s -&gt; %s', this.url, url);
 
   // location
   url = resolve(this.url, url);
@@ -3434,9 +3427,9 @@ try {
     headers = utils.cleanHeader(this.req._headers, shouldStripCookie);
 
     // force GET
-    this.method = &#x27;HEAD&#x27; == this.method
-      ? &#x27;HEAD&#x27;
-      : &#x27;GET&#x27;;
+    this.method = 'HEAD' == this.method
+      ? 'HEAD'
+      : 'GET';
 
     // clear data
     this._data = null;
@@ -3448,7 +3441,7 @@ try {
     headers = utils.cleanHeader(this.req._headers, shouldStripCookie);
 
     // force method
-    this.method = &#x27;GET&#x27;;
+    this.method = 'GET';
 
     // clear data
     this._data = null;
@@ -3469,7 +3462,7 @@ try {
   this.qs = {};
   this.qsRaw = [];
   this.set(headers);
-  this.emit(&#x27;redirect&#x27;, res);
+  this.emit('redirect', res);
   this._redirectList.push(this.url);
   this.end(this._callback);
   return this;
@@ -3507,7 +3500,7 @@ try {
 
 Request.prototype.callback = function(err, res){
 // console.log(this._retries, this._maxRetries)
-if (this._maxRetries &#x26;&#x26; this._retries++ &#x3c; this._maxRetries &#x26;&#x26; shouldRetry(err, res)) {
+if (this._maxRetries &amp;&amp; this._retries++ &lt; this._maxRetries &amp;&amp; shouldRetry(err, res)) {
   return this.<span class="apidocCodeKeywordSpan">_retry</span>();
 }
 
@@ -3532,15 +3525,15 @@ if (err) {
   var self = this;
 
   // deadline
-  if (this._timeout &#x26;&#x26; !this._timer) {
+  if (this._timeout &amp;&amp; !this._timer) {
     this._timer = setTimeout(function(){
-      self._timeoutError(&#x27;Timeout of &#x27;, self._timeout, &#x27;ETIME&#x27;);
+      self._timeoutError('Timeout of ', self._timeout, 'ETIME');
     }, this._timeout);
   }
   // response timeout
-  if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
+  if (this._responseTimeout &amp;&amp; !this._responseTimeoutTimer) {
     this._responseTimeoutTimer = setTimeout(function(){
-      self._timeoutError(&#x27;Response timeout of &#x27;, self._responseTimeout, &#x27;ETIMEDOUT&#x27;);
+      self._timeoutError('Response timeout of ', self._responseTimeout, 'ETIMEDOUT');
     }, this._responseTimeout);
   }
 }</pre></li>
@@ -3557,7 +3550,7 @@ this.<span class="apidocCodeKeywordSpan">_setTimeouts</span>();
 // state change
 xhr.onreadystatechange = function(){
   var readyState = xhr.readyState;
-  if (readyState &#x3e;= 2 &#x26;&#x26; self._responseTimeoutTimer) {
+  if (readyState &gt;= 2 &amp;&amp; self._responseTimeoutTimer) {
     clearTimeout(self._responseTimeoutTimer);
   }
 ...</pre></li>
@@ -3574,18 +3567,18 @@ xhr.onreadystatechange = function(){
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_shouldUnzip = function (res){
   if (res.statusCode === 204 || res.statusCode === 304) {
-    // These aren&#x27;t supposed to have any body
+    // These aren't supposed to have any body
     return false;
   }
 
   // header content is a string, and distinction between 0 and no information is crucial
-  if (&#x27;0&#x27; === res.headers[&#x27;content-length&#x27;]) {
+  if ('0' === res.headers['content-length']) {
     // We know that the body is empty (unfortunately, this check does not cover chunked encoding)
     return false;
   }
 
   // console.log(res);
-  return /^\s*(?:deflate|gzip)\s*$/.test(res.headers[&#x27;content-encoding&#x27;]);
+  return /^\s*(?:deflate|gzip)\s*$/.test(res.headers['content-encoding']);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -3603,9 +3596,9 @@ xhr.onreadystatechange = function(){
   if (this._aborted) {
     return;
   }
-  var err = new Error(reason + timeout + &#x27;ms exceeded&#x27;);
+  var err = new Error(reason + timeout + 'ms exceeded');
   err.timeout = timeout;
-  err.code = &#x27;ECONNABORTED&#x27;;
+  err.code = 'ECONNABORTED';
   err.errno = errno;
   this.timedout = true;
   this.abort();
@@ -3617,15 +3610,15 @@ RequestBase.prototype._setTimeouts = function() {
 var self = this;
 
 // deadline
-if (this._timeout &#x26;&#x26; !this._timer) {
+if (this._timeout &amp;&amp; !this._timer) {
   this._timer = setTimeout(function(){
-    self.<span class="apidocCodeKeywordSpan">_timeoutError</span>(&#x27;Timeout of &#x27;, self._timeout, &#x27;ETIME&#x27;);
+    self.<span class="apidocCodeKeywordSpan">_timeoutError</span>('Timeout of ', self._timeout, 'ETIME');
   }, this._timeout);
 }
 // response timeout
-if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
+if (this._responseTimeout &amp;&amp; !this._responseTimeoutTimer) {
   this._responseTimeoutTimer = setTimeout(function(){
-    self._timeoutError(&#x27;Response timeout of &#x27;, self._responseTimeout, &#x27;ETIMEDOUT&#x27;);
+    self._timeoutError('Response timeout of ', self._responseTimeout, 'ETIMEDOUT');
   }, this._responseTimeout);
 ...</pre></li>
     </ul>
@@ -3644,10 +3637,10 @@ if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
     return this;
   }
   this._aborted = true;
-  this.xhr &#x26;&#x26; this.xhr.abort(); // browser
-  this.req &#x26;&#x26; this.req.abort(); // node
+  this.xhr &amp;&amp; this.xhr.abort(); // browser
+  this.req &amp;&amp; this.req.abort(); // node
   this.clearTimeout();
-  this.emit(&#x27;abort&#x27;);
+  this.emit('abort');
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -3658,10 +3651,10 @@ RequestBase.prototype.abort = function(){
     return this;
   }
   this._aborted = true;
-  this.xhr &#x26;&#x26; this.xhr.<span class="apidocCodeKeywordSpan">abort</span>(); // browser
-  this.req &#x26;&#x26; this.req.abort(); // node
+  this.xhr &amp;&amp; this.xhr.<span class="apidocCodeKeywordSpan">abort</span>(); // browser
+  this.req &amp;&amp; this.req.abort(); // node
   this.clearTimeout();
-  this.emit(&#x27;abort&#x27;);
+  this.emit('abort');
   return this;
 };
 
@@ -3679,7 +3672,7 @@ RequestBase.prototype.abort = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">accept = function (type){
-  return this.set(&#x27;Accept&#x27;, ~type.indexOf(&#x27;/&#x27;)
+  return this.set('Accept', ~type.indexOf('/')
     ? type
     : mime.lookup(type));
 }</pre></li>
@@ -3688,14 +3681,14 @@ RequestBase.prototype.abort = function(){
 *
 * Examples:
 *
-*      superagent.types.json = &#x27;application/json&#x27;;
+*      superagent.types.json = 'application/json';
 *
-*      request.get(&#x27;/agent&#x27;)
-*        .<span class="apidocCodeKeywordSpan">accept</span>(&#x27;json&#x27;)
+*      request.get('/agent')
+*        .<span class="apidocCodeKeywordSpan">accept</span>('json')
 *        .end(callback);
 *
-*      request.get(&#x27;/agent&#x27;)
-*        .accept(&#x27;application/json&#x27;)
+*      request.get('/agent')
+*        .accept('application/json')
 *        .end(callback);
 *
 * @param {String} accept
@@ -3731,19 +3724,19 @@ RequestBase.prototype.abort = function(){
     <li>description and source-code<pre class="apidocCodePre">attach = function (field, file, options){
   if (file) {
     if (this._data) {
-      throw Error(&#x22;superagent can&#x27;t mix .send() and .attach()&#x22;);
+      throw Error("superagent can't mix .send() and .attach()");
     }
 
     var o = options || {};
-    if (&#x27;string&#x27; == typeof options) {
+    if ('string' == typeof options) {
       o = { filename: options };
     }
 
-    if (&#x27;string&#x27; == typeof file) {
+    if ('string' == typeof file) {
       if (!o.filename) o.filename = file;
-      debug(&#x27;creating `fs.ReadStream` instance for file: %s&#x27;, file);
+      debug('creating `fs.ReadStream` instance for file: %s', file);
       file = fs.createReadStream(file);
-    } else if (!o.filename &#x26;&#x26; file.path) {
+    } else if (!o.filename &amp;&amp; file.path) {
       o.filename = file.path;
     }
 
@@ -3758,9 +3751,9 @@ RequestBase.prototype.abort = function(){
 * with optional `options` (or filename).
 *
 * ``` js
-* request.post(&#x27;/upload&#x27;)
-*   .<span class="apidocCodeKeywordSpan">attach</span>(&#x27;content&#x27;, new Blob([&#x27;&#x3c;a id=&#x22;a&#x22;&#x3e;&#x3c;
-b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;text/html&#x22;}))
+* request.post('/upload')
+*   .<span class="apidocCodeKeywordSpan">attach</span>('content', new Blob(['&lt;a id="a"&gt;&lt;
+b id="b"&gt;hey!&lt;/b&gt;&lt;/a&gt;'], { type: "text/html"}))
 *   .end(callback);
 * ```
 *
@@ -3781,32 +3774,32 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">auth = function (user, pass, options){
-  if (1 === arguments.length) pass = &#x27;&#x27;;
-  if (2 === arguments.length &#x26;&#x26; typeof pass === &#x27;object&#x27;) options = pass;
+  if (1 === arguments.length) pass = '';
+  if (2 === arguments.length &amp;&amp; typeof pass === 'object') options = pass;
   if (!options) {
-    options = { type: &#x27;basic&#x27; };
+    options = { type: 'basic' };
   }
   switch (options.type) {
-    case &#x27;bearer&#x27;:
-      return this.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + user);
+    case 'bearer':
+      return this.set('Authorization', 'Bearer ' + user);
 
-    default: // &#x27;basic&#x27;
-      if (!~user.indexOf(&#x27;:&#x27;)) user = user + &#x27;:&#x27;;
-      var str = new Buffer(user + pass).toString(&#x27;base64&#x27;);
-      return this.set(&#x27;Authorization&#x27;, &#x27;Basic &#x27; + str);
+    default: // 'basic'
+      if (!~user.indexOf(':')) user = user + ':';
+      var str = new Buffer(user + pass).toString('base64');
+      return this.set('Authorization', 'Basic ' + str);
   }
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     break;
 
-    case &#x27;auto&#x27;:
+    case 'auto':
       this.username = user;
       this.password = pass;
     break;
 
-    case &#x27;bearer&#x27;: // usage would be .<span class="apidocCodeKeywordSpan">auth</span>(accessToken, { type: &#x27;bearer
-&#x27; })
-      this.set(&#x27;Authorization&#x27;, &#x27;Bearer &#x27; + user);
+    case 'bearer': // usage would be .<span class="apidocCodeKeywordSpan">auth</span>(accessToken, { type: 'bearer
+' })
+      this.set('Authorization', 'Bearer ' + user);
     break;
   }
   return this;
@@ -3859,14 +3852,14 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
     <ul>
     <li>description and source-code<pre class="apidocCodePre">callback = function (err, res){
   // console.log(this._retries, this._maxRetries)
-  if (this._maxRetries &#x26;&#x26; this._retries++ &#x3c; this._maxRetries &#x26;&#x26; shouldRetry(err, res)) {
+  if (this._maxRetries &amp;&amp; this._retries++ &lt; this._maxRetries &amp;&amp; shouldRetry(err, res)) {
     return this._retry();
   }
 
-  // Avoid the error which is emitted from &#x27;socket hang up&#x27; to cause the fn undefined error on JS runtime.
+  // Avoid the error which is emitted from 'socket hang up' to cause the fn undefined error on JS runtime.
   var fn = this._callback || noop;
   this.clearTimeout();
-  if (this.called) return console.warn(&#x27;superagent: double callback bug&#x27;);
+  if (this.called) return console.warn('superagent: double callback bug');
   this.called = true;
 
   if (!err) {
@@ -3874,7 +3867,7 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
       return fn(err, res);
     }
 
-    var msg = &#x27;Unsuccessful HTTP response&#x27;;
+    var msg = 'Unsuccessful HTTP response';
     if (res) {
       msg = http.STATUS_CODES[res.status] || msg;
     }
@@ -3887,8 +3880,8 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
 
   // only emit error event if there is a listener
   // otherwise we assume the callback to `.end()` will get the error
-  if (err &#x26;&#x26; this.listeners(&#x27;error&#x27;).length &#x3e; 0) {
-    this.emit(&#x27;error&#x27;, err);
+  if (err &amp;&amp; this.listeners('error').length &gt; 0) {
+    this.emit('error', err);
   }
 
   fn(err, res);
@@ -3904,7 +3897,7 @@ b id=&#x22;b&#x22;&#x3e;hey!&#x3c;/b&#x3e;&#x3c;/a&#x3e;&#x27;], { type: &#x22;t
   return self.<span class="apidocCodeKeywordSpan">callback</span>(err);
 }
 
-self.emit(&#x27;response&#x27;, res);
+self.emit('response', res);
 
 var new_err;
 try {
@@ -3962,7 +3955,7 @@ try {
     <li>example usage<pre class="apidocCodePre">...
 Request.prototype.callback = function(err, res){
 // console.log(this._retries, this._maxRetries)
-if (this._maxRetries &#x26;&#x26; this._retries++ &#x3c; this._maxRetries &#x26;&#x26; shouldRetry(err, res)) {
+if (this._maxRetries &amp;&amp; this._retries++ &lt; this._maxRetries &amp;&amp; shouldRetry(err, res)) {
   return this._retry();
 }
 
@@ -3971,7 +3964,7 @@ this.<span class="apidocCodeKeywordSpan">clearTimeout</span>();
 
 if (err) {
   if (this._maxRetries) err.retries = this._retries - 1;
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 }
 
 fn(err, res);
@@ -3989,10 +3982,10 @@ fn(err, res);
     <ul>
     <li>description and source-code<pre class="apidocCodePre">end = function (fn){
   this.request();
-  debug(&#x27;%s %s&#x27;, this.method, this.url);
+  debug('%s %s', this.method, this.url);
 
   if (this._endCalled) {
-    console.warn(&#x22;Warning: .end() was called twice. This is not supported in superagent&#x22;);
+    console.warn("Warning: .end() was called twice. This is not supported in superagent");
   }
   this._endCalled = true;
 
@@ -4005,10 +3998,10 @@ fn(err, res);
 
 ```js
 request
-  .post(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .post('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .<span class="apidocCodeKeywordSpan">end</span>(function(err, res){
     // Calling the end function will send the request
   });
@@ -4033,11 +4026,11 @@ Tested browsers:
 
   // name should be either a string or an object.
   if (null === name ||  undefined === name) {
-    throw new Error(&#x27;.field(name, val) name can not be empty&#x27;);
+    throw new Error('.field(name, val) name can not be empty');
   }
 
   if (this._data) {
-    console.error(&#x22;.field() can&#x27;t be used if .send() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
+    console.error(".field() can't be used if .send() is used. Please use only .send() or only .field() &amp; .attach()");
   }
 
   if (isObject(name)) {
@@ -4056,10 +4049,10 @@ Tested browsers:
 
   // val should be defined now
   if (null === val || undefined === val) {
-    throw new Error(&#x27;.field(name, val) val can not be empty&#x27;);
+    throw new Error('.field(name, val) val can not be empty');
   }
-  if (&#x27;boolean&#x27; === typeof val) {
-    val = &#x27;&#x27; + val;
+  if ('boolean' === typeof val) {
+    val = '' + val;
   }
   this._getFormData().append(name, val);
   return this;
@@ -4072,8 +4065,7 @@ Tested browsers:
 - Latest Android, iPhone
 - IE10 through latest. IE9 with polyfills.
 
-Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span
->()`.
+Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span>()`.
 
 Node 4 or later is required.
 
@@ -4098,13 +4090,13 @@ SuperAgent is easily extended via plugins.
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -4155,7 +4147,7 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">ok = function (cb) {
-  if (&#x27;function&#x27; !== typeof cb) throw Error(&#x22;Callback required&#x22;);
+  if ('function' !== typeof cb) throw Error("Callback required");
   this._okCallback = cb;
   return this;
 }</pre></li>
@@ -4222,7 +4214,7 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">query = function (val){
-  if (&#x27;string&#x27; == typeof val) {
+  if ('string' == typeof val) {
     this.qsRaw.push(val);
     return this;
   }
@@ -4232,13 +4224,13 @@ request
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .get(&#x27;/some-url&#x27;)
-  .<span class="apidocCodeKeywordSpan">query</span>({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .get('/some-url')
+  .<span class="apidocCodeKeywordSpan">query</span>({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -4282,17 +4274,17 @@ request
   var retries = this._retries;
 
   // default to http://
-  if (0 != url.indexOf(&#x27;http&#x27;)) url = &#x27;http://&#x27; + url;
+  if (0 != url.indexOf('http')) url = 'http://' + url;
   url = parse(url);
 
   // support unix sockets
   if (/^https?\+unix:/.test(url.protocol) === true) {
     // get the protocol
-    url.protocol = url.protocol.split(&#x27;+&#x27;)[0] + &#x27;:&#x27;;
+    url.protocol = url.protocol.split('+')[0] + ':';
 
     // get the socket, path
     var unixParts = url.path.match(/^([^/]+)(.+)$/);
-    options.socketPath = unixParts[1].replace(/%2F/g, &#x27;/&#x27;);
+    options.socketPath = unixParts[1].replace(/%2F/g, '/');
     url.pathname = unixParts[2];
   }
 
@@ -4312,24 +4304,24 @@ request
 
   // request
   var req = this.req = mod.request(options);
-  if (&#x27;HEAD&#x27; != options.method) {
-    req.setHeader(&#x27;Accept-Encoding&#x27;, &#x27;gzip, deflate&#x27;);
+  if ('HEAD' != options.method) {
+    req.setHeader('Accept-Encoding', 'gzip, deflate');
   }
   this.protocol = url.protocol;
   this.host = url.host;
 
   // expose events
-  req.once(&#x27;drain&#x27;, function(){ self.emit(&#x27;drain&#x27;); });
+  req.once('drain', function(){ self.emit('drain'); });
 
-  req.once(&#x27;error&#x27;, function(err){
+  req.once('error', function(err){
     // flag abortion here for out timeouts
-    // because node will emit a faux-error &#x22;socket hang up&#x22;
+    // because node will emit a faux-error "socket hang up"
     // when request is aborted before a connection is made
     if (self._aborted) return;
     // if not the same, we are in the **old** (cancelled) request,
     // so need to continue (same as for above)
     if (self._retries !== retries) return;
-    // if we&#x27;ve received a response then we don&#x27;t want to let
+    // if we've received a response then we don't want to let
     // an error in the request blow up the response
     if (self.response) return;
     self.callback(err);
@@ -4337,7 +4329,7 @@ request
 
   // auth
   if (url.auth) {
-    var auth = url.auth.split(&#x27;:&#x27;);
+    var auth = url.auth.split(':');
     this.auth(auth[0], auth[1]);
   }
 
@@ -4346,7 +4338,7 @@ request
     this.query(url.search.substr(1));
 
   // add cookies
-  if (this.cookies) req.setHeader(&#x27;Cookie&#x27;, this.cookies);
+  if (this.cookies) req.setHeader('Cookie', this.cookies);
 
   for (var key in this.header) {
     if (this.header.hasOwnProperty(key))
@@ -4356,7 +4348,7 @@ request
   try {
     this._appendQueryString(req);
   } catch (e) {
-    return this.emit(&#x27;error&#x27;, e);
+    return this.emit('error', e);
   }
 
   return req;
@@ -4400,8 +4392,8 @@ RequestBase.prototype._retry = function() {
 *
 * Examples:
 *
-*      req.get(&#x27;/&#x27;)
-*        .<span class="apidocCodeKeywordSpan">responseType</span>(&#x27;blob&#x27;)
+*      req.get('/')
+*        .<span class="apidocCodeKeywordSpan">responseType</span>('blob')
 *        .end(callback);
 *
 * @param {String} val
@@ -4423,7 +4415,7 @@ RequestBase.prototype._retry = function() {
     <li>description and source-code<pre class="apidocCodePre">function retry(count){
   // Default to 1 if no count passed or true
   if (arguments.length === 0 || count === true) count = 1;
-  if (count &#x3c;= 0) count = 0;
+  if (count &lt;= 0) count = 0;
   this._maxRetries = count;
   this._retries = 0;
   return this;
@@ -4442,37 +4434,37 @@ RequestBase.prototype._retry = function() {
     <ul>
     <li>description and source-code<pre class="apidocCodePre">send = function (data){
   var isObj = isObject(data);
-  var type = this._header[&#x27;content-type&#x27;];
+  var type = this._header['content-type'];
 
   if (this._formData) {
-    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
+    console.error(".send() can't be used if .attach() or .field() is used. Please use only .send() or only .field() &amp; .attach()");
   }
 
-  if (isObj &#x26;&#x26; !this._data) {
+  if (isObj &amp;&amp; !this._data) {
     if (Array.isArray(data)) {
       this._data = [];
     } else if (!this._isHost(data)) {
       this._data = {};
     }
-  } else if (data &#x26;&#x26; this._data &#x26;&#x26; this._isHost(this._data)) {
-    throw Error(&#x22;Can&#x27;t merge these send calls&#x22;);
+  } else if (data &amp;&amp; this._data &amp;&amp; this._isHost(this._data)) {
+    throw Error("Can't merge these send calls");
   }
 
   // merge
-  if (isObj &#x26;&#x26; isObject(this._data)) {
+  if (isObj &amp;&amp; isObject(this._data)) {
     for (var key in data) {
       this._data[key] = data[key];
     }
-  } else if (&#x27;string&#x27; == typeof data) {
+  } else if ('string' == typeof data) {
     // default to x-www-form-urlencoded
-    if (!type) this.type(&#x27;form&#x27;);
-    type = this._header[&#x27;content-type&#x27;];
-    if (&#x27;application/x-www-form-urlencoded&#x27; == type) {
+    if (!type) this.type('form');
+    type = this._header['content-type'];
+    if ('application/x-www-form-urlencoded' == type) {
       this._data = this._data
-        ? this._data + &#x27;&#x26;&#x27; + data
+        ? this._data + '&amp;' + data
         : data;
     } else {
-      this._data = (this._data || &#x27;&#x27;) + data;
+      this._data = (this._data || '') + data;
     }
   } else {
     this._data = data;
@@ -4483,7 +4475,7 @@ RequestBase.prototype._retry = function() {
   }
 
   // default to json
-  if (!type) this.type(&#x27;json&#x27;);
+  if (!type) this.type('json');
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4494,10 +4486,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .post(&#x27;/api/pet&#x27;)
-  .<span class="apidocCodeKeywordSpan">send</span>({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .post('/api/pet')
+  .<span class="apidocCodeKeywordSpan">send</span>({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -4548,10 +4540,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .post(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .<span class="apidocCodeKeywordSpan">set</span>(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .post('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .<span class="apidocCodeKeywordSpan">set</span>('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -4572,7 +4564,7 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sortQuery = function (sort) {
   // _sort default to true but otherwise can be a function or boolean
-  this._sort = typeof sort === &#x27;undefined&#x27; ? true : sort;
+  this._sort = typeof sort === 'undefined' ? true : sort;
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -4580,16 +4572,16 @@ request
 * Examples:
 *
 *       // default order
-*       request.get(&#x27;/user&#x27;)
-*         .query(&#x27;name=Nick&#x27;)
-*         .query(&#x27;search=Manny&#x27;)
+*       request.get('/user')
+*         .query('name=Nick')
+*         .query('search=Manny')
 *         .<span class="apidocCodeKeywordSpan">sortQuery</span>()
 *         .end(callback)
 *
 *       // customized sort function
-*       request.get(&#x27;/user&#x27;)
-*         .query(&#x27;name=Nick&#x27;)
-*         .query(&#x27;search=Manny&#x27;)
+*       request.get('/user')
+*         .query('name=Nick')
+*         .query('search=Manny')
 *         .sortQuery(function(a, b){
 ...</pre></li>
     </ul>
@@ -4607,8 +4599,8 @@ request
   if (!this._fullfilledPromise) {
     var self = this;
     if (this._endCalled) {
-      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
- you use promises&#x22;);
+      console.warn("Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
+ you use promises");
     }
     this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
       self.end(function(err, res){
@@ -4626,8 +4618,8 @@ RequestBase.prototype.then = function then(resolve, reject) {
 if (!this._fullfilledPromise) {
   var self = this;
   if (this._endCalled) {
-    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
-then</span>() were called. Never call .end() if you use promises&#x22;);
+    console.warn("Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
+then</span>() were called. Never call .end() if you use promises");
   }
   this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
     self.end(function(err, res){
@@ -4648,7 +4640,7 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function timeout(options){
-  if (!options || &#x27;object&#x27; !== typeof options) {
+  if (!options || 'object' !== typeof options) {
     this._timeout = options;
     this._responseTimeout = 0;
     return this;
@@ -4656,14 +4648,14 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 
   for(var option in options) {
     switch(option) {
-      case &#x27;deadline&#x27;:
+      case 'deadline':
         this._timeout = options.deadline;
         break;
-      case &#x27;response&#x27;:
+      case 'response':
         this._responseTimeout = options.response;
         break;
       default:
-        console.warn(&#x22;Unknown timeout option&#x22;, option);
+        console.warn("Unknown timeout option", option);
     }
   }
   return this;
@@ -4701,7 +4693,7 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">type = function (type){
-  return this.set(&#x27;Content-Type&#x27;, ~type.indexOf(&#x27;/&#x27;)
+  return this.set('Content-Type', ~type.indexOf('/')
     ? type
     : mime.lookup(type));
 }</pre></li>
@@ -4710,15 +4702,15 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 *
 * Examples:
 *
-*      superagent.types.xml = &#x27;application/xml&#x27;;
+*      superagent.types.xml = 'application/xml';
 *
-*      request.post(&#x27;/&#x27;)
-*        .<span class="apidocCodeKeywordSpan">type</span>(&#x27;xml&#x27;)
+*      request.post('/')
+*        .<span class="apidocCodeKeywordSpan">type</span>('xml')
 *        .send(xmlstring)
 *        .end(callback);
 *
-*      request.post(&#x27;/&#x27;)
-*        .type(&#x27;application/xml&#x27;)
+*      request.post('/')
+*        .type('application/xml')
 *        .send(xmlstring)
 *        .end(callback);
 ...</pre></li>
@@ -4745,8 +4737,8 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
  *
  * Example:
  *
- *      req.get(&#x27;/&#x27;)
- *        .<span class="apidocCodeKeywordSpan">unset</span>(&#x27;User-Agent&#x27;)
+ *      req.get('/')
+ *        .<span class="apidocCodeKeywordSpan">unset</span>('User-Agent')
  *        .end(callback);
  *
  * @param {String} field
@@ -4771,13 +4763,13 @@ delete this.header[field];
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .get(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .get('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .<span class="apidocCodeKeywordSpan">use</span>(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -4848,15 +4840,15 @@ Existing plugins:
   this.text = res.text;
   this.body = res.body !== undefined ? res.body : {};
   this.files = res.files || {};
-  this.buffered = &#x27;string&#x27; == typeof this.text;
+  this.buffered = 'string' == typeof this.text;
   this.header = this.headers = res.headers;
   this._setStatusProperties(res.statusCode);
   this._setHeaderProperties(this.header);
   this.setEncoding = res.setEncoding.bind(res);
-  res.on(&#x27;data&#x27;, this.emit.bind(this, &#x27;data&#x27;));
-  res.on(&#x27;end&#x27;, this.emit.bind(this, &#x27;end&#x27;));
-  res.on(&#x27;close&#x27;, this.emit.bind(this, &#x27;close&#x27;));
-  res.on(&#x27;error&#x27;, this.emit.bind(this, &#x27;error&#x27;));
+  res.on('data', this.emit.bind(this, 'data'));
+  res.on('end', this.emit.bind(this, 'end'));
+  res.on('close', this.emit.bind(this, 'close'));
+  res.on('error', this.emit.bind(this, 'error'));
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -4895,7 +4887,7 @@ Existing plugins:
     // TODO: make this a util
 
     // content-type
-    var ct = header[&#x27;content-type&#x27;] || &#x27;&#x27;;
+    var ct = header['content-type'] || '';
     this.type = utils.type(ct);
 
     // params
@@ -4917,16 +4909,16 @@ Existing plugins:
 }
 this._setStatusProperties(status);
 this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-// getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+// getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
 // getResponseHeader still works. so we get content-type even if getting
 // other headers fails.
-this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+this.header['content-type'] = this.xhr.getResponseHeader('content-type');
 this.<span class="apidocCodeKeywordSpan">_setHeaderProperties</span>(this.header);
 
-if (null === this.text &#x26;&#x26; req._responseType) {
+if (null === this.text &amp;&amp; req._responseType) {
   this.body = this.xhr.response;
 } else {
-  this.body = this.req.method != &#x27;HEAD&#x27;
+  this.body = this.req.method != 'HEAD'
     ? this._parseBody(this.text ? this.text : this.xhr.response)
     : null;
 ...</pre></li>
@@ -4977,10 +4969,10 @@ if (status === 1223) {
 }
 this.<span class="apidocCodeKeywordSpan">_setStatusProperties</span>(status);
 this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-// getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+// getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
 // getResponseHeader still works. so we get content-type even if getting
 // other headers fails.
-this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+this.header['content-type'] = this.xhr.getResponseHeader('content-type');
 this._setHeaderProperties(this.header);
 ...</pre></li>
     </ul>
@@ -5015,13 +5007,13 @@ this._setHeaderProperties(this.header);
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -5071,7 +5063,7 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">setStatusProperties = function (status){
-  console.warn(&#x22;In superagent 2.x setStatusProperties is a private method&#x22;);
+  console.warn("In superagent 2.x setStatusProperties is a private method");
   return this._setStatusProperties(status);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5091,7 +5083,7 @@ request
   var method = req.method;
   var path = req.path;
 
-  var msg = &#x27;cannot &#x27; + method + &#x27; &#x27; + path + &#x27; (&#x27; + this.status + &#x27;)&#x27;;
+  var msg = 'cannot ' + method + ' ' + path + ' (' + this.status + ')';
   var err = new Error(msg);
   err.status = this.status;
   err.text = this.text;
@@ -5182,7 +5174,7 @@ this.unauthorized = 401 == status;
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_attachCookies = function (req){
   var url = parse(req.url);
-  var access = CookieAccess(url.hostname, url.pathname, &#x27;https:&#x27; == url.protocol);
+  var access = CookieAccess(url.hostname, url.pathname, 'https:' == url.protocol);
   var cookies = this.jar.getCookies(access).toValueString();
   req.cookies = cookies;
 }</pre></li>
@@ -5199,7 +5191,7 @@ this.unauthorized = 401 == status;
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">_saveCookies = function (res){
-  var cookies = res.headers[&#x27;set-cookie&#x27;];
+  var cookies = res.headers['set-cookie'];
   if (cookies) this.jar.setCookies(cookies);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5221,12 +5213,12 @@ this.unauthorized = 401 == status;
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5248,28 +5240,28 @@ this.unauthorized = 401 == status;
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
     e.percent = e.loaded / e.total * 100;
   }
   e.direction = direction;
-  self.emit(&#x27;progress&#x27;, e);
+  self.emit('progress', e);
 }
-if (this.hasListeners(&#x27;progress&#x27;)) {
+if (this.hasListeners('progress')) {
   try {
-    xhr.onprogress = handleProgress.<span class="apidocCodeKeywordSpan">bind</span>(null, &#x27;download&#x27;);
+    xhr.onprogress = handleProgress.<span class="apidocCodeKeywordSpan">bind</span>(null, 'download');
     if (xhr.upload) {
-      xhr.upload.onprogress = handleProgress.bind(null, &#x27;upload&#x27;);
+      xhr.upload.onprogress = handleProgress.bind(null, 'upload');
     }
   } catch(e) {
-    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn&#x27;t exist.
+    // Accessing xhr.upload fails in IE from a web worker, so just pretend it doesn't exist.
     // Reported here:
     // https://connect.microsoft.com/IE/feedback/details/837245/xmlhttprequest-upload-throws-invalid-argument-when-used-from-web
 -worker-context
@@ -5292,12 +5284,12 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5319,12 +5311,12 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5346,12 +5338,12 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5373,12 +5365,12 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5400,12 +5392,12 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5427,24 +5419,24 @@ if (this.hasListeners(&#x27;progress&#x27;)) {
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -5470,12 +5462,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5497,12 +5489,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5524,12 +5516,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5551,12 +5543,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5578,12 +5570,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5605,12 +5597,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5632,12 +5624,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5659,12 +5651,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5686,12 +5678,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5713,12 +5705,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5740,12 +5732,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5767,12 +5759,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5794,12 +5786,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -5811,10 +5803,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .<span class="apidocCodeKeywordSpan">post</span>(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .<span class="apidocCodeKeywordSpan">post</span>('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -5838,12 +5830,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5865,12 +5857,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5892,12 +5884,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5919,12 +5911,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5946,12 +5938,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -5973,12 +5965,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6000,12 +5992,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6027,12 +6019,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6054,12 +6046,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6081,12 +6073,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6108,12 +6100,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6135,12 +6127,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6162,12 +6154,12 @@ request
   req.pfx(this._pfx);
   req.cert(this._cert);
 
-  req.on(&#x27;response&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._saveCookies.bind(this));
-  req.on(&#x27;redirect&#x27;, this._attachCookies.bind(this, req));
+  req.on('response', this._saveCookies.bind(this));
+  req.on('redirect', this._saveCookies.bind(this));
+  req.on('redirect', this._attachCookies.bind(this, req));
   this._attachCookies(req);
 
-  fn &#x26;&#x26; req.end(fn);
+  fn &amp;&amp; req.end(fn);
   return req;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
@@ -6189,13 +6181,13 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">client = function (method, url) {
   // callback
-  if (&#x27;function&#x27; == typeof url) {
-    return new exports.Request(&#x27;GET&#x27;, method).end(url);
+  if ('function' == typeof url) {
+    return new exports.Request('GET', method).end(url);
   }
 
   // url first
   if (1 == arguments.length) {
-    return new exports.Request(&#x27;GET&#x27;, method);
+    return new exports.Request('GET', method);
   }
 
   return new exports.Request(method, url);
@@ -6219,20 +6211,20 @@ request
   this.url = url;
   this.header = {}; // preserves header name case
   this._header = {}; // coerces header names to lowercase
-  this.on(&#x27;end&#x27;, function(){
+  this.on('end', function(){
     var err = null;
     var res = null;
 
     try {
       res = new Response(self);
     } catch(e) {
-      err = new Error(&#x27;Parser is unable to parse the response&#x27;);
+      err = new Error('Parser is unable to parse the response');
       err.parse = true;
       err.original = e;
       // issue #675: return the raw response if the response parsing fails
       if (self.xhr) {
-        // ie9 doesn&#x27;t have &#x27;response&#x27; property
-        err.rawResponse = typeof self.xhr.responseType == &#x27;undefined&#x27; ? self.xhr.responseText : self.xhr.response;
+        // ie9 doesn't have 'response' property
+        err.rawResponse = typeof self.xhr.responseType == 'undefined' ? self.xhr.responseText : self.xhr.response;
         // issue #876: return the http status code if the response parsing fails
         err.status = self.xhr.status ? self.xhr.status : null;
         err.statusCode = err.status; // backwards-compat only
@@ -6244,12 +6236,12 @@ request
       return self.callback(err);
     }
 
-    self.emit(&#x27;response&#x27;, res);
+    self.emit('response', res);
 
     var new_err;
     try {
       if (!self._isResponseOK(res)) {
-        new_err = new Error(res.statusText || &#x27;Unsuccessful HTTP response&#x27;);
+        new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
         new_err.original = err;
         new_err.response = res;
         new_err.status = res.status;
@@ -6258,7 +6250,7 @@ request
       new_err = e; // #985 touching res may cause INVALID_STATE_ERR on old Android
     }
 
-    // #1000 don&#x27;t catch errors from the callback to avoid double calling it
+    // #1000 don't catch errors from the callback to avoid double calling it
     if (new_err) {
       self.callback(new_err, res);
     } else {
@@ -6273,13 +6265,13 @@ request
 
 var request = exports = module.exports = function(method, url) {
 // callback
-if (&#x27;function&#x27; == typeof url) {
-  return new exports.<span class="apidocCodeKeywordSpan">Request</span>(&#x27;GET&#x27;, method).end(url);
+if ('function' == typeof url) {
+  return new exports.<span class="apidocCodeKeywordSpan">Request</span>('GET', method).end(url);
 }
 
 // url first
 if (1 == arguments.length) {
-  return new exports.Request(&#x27;GET&#x27;, method);
+  return new exports.Request('GET', method);
 }
 ...</pre></li>
     </ul>
@@ -6296,9 +6288,9 @@ if (1 == arguments.length) {
     <li>description and source-code<pre class="apidocCodePre">function Response(req) {
   this.req = req;
   this.xhr = this.req.xhr;
-  // responseText is accessible only if responseType is &#x27;&#x27; or &#x27;text&#x27; and on older browsers
-  this.text = ((this.req.method !=&#x27;HEAD&#x27; &#x26;&#x26; (this.xhr.responseType === &#x27;&#x27; || this.xhr.responseType === &#x27;text&#x27;)) || typeof this.xhr
-.responseType === &#x27;undefined&#x27;)
+  // responseText is accessible only if responseType is '' or 'text' and on older browsers
+  this.text = ((this.req.method !='HEAD' &amp;&amp; (this.xhr.responseType === '' || this.xhr.responseType === 'text')) || typeof this.xhr
+.responseType === 'undefined')
      ? this.xhr.responseText
      : null;
   this.statusText = this.req.xhr.statusText;
@@ -6309,16 +6301,16 @@ if (1 == arguments.length) {
   }
   this._setStatusProperties(status);
   this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-  // getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+  // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
   // getResponseHeader still works. so we get content-type even if getting
   // other headers fails.
-  this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
   this._setHeaderProperties(this.header);
 
-  if (null === this.text &#x26;&#x26; req._responseType) {
+  if (null === this.text &amp;&amp; req._responseType) {
     this.body = this.xhr.response;
   } else {
-    this.body = this.req.method != &#x27;HEAD&#x27;
+    this.body = this.req.method != 'HEAD'
       ? this._parseBody(this.text ? this.text : this.xhr.response)
       : null;
   }
@@ -6336,8 +6328,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function del(url, data, fn){
-  var req = request(&#x27;DELETE&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('DELETE', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6355,8 +6347,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function del(url, data, fn){
-  var req = request(&#x27;DELETE&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('DELETE', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6374,8 +6366,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">get = function (url, data, fn){
-  var req = request(&#x27;GET&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('GET', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.query(data);
   if (fn) req.end(fn);
   return req;
@@ -6383,13 +6375,13 @@ if (1 == arguments.length) {
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -6410,16 +6402,16 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getXHR = function () {
   if (root.XMLHttpRequest
-      &#x26;&#x26; (!root.location || &#x27;file:&#x27; != root.location.protocol
+      &amp;&amp; (!root.location || 'file:' != root.location.protocol
           || !root.ActiveXObject)) {
     return new XMLHttpRequest;
   } else {
-    try { return new ActiveXObject(&#x27;Microsoft.XMLHTTP&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP.6.0&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP.3.0&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP&#x27;); } catch(e) {}
+    try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
   }
-  throw Error(&#x22;Browser-only verison of superagent could not find XHR&#x22;);
+  throw Error("Browser-only verison of superagent could not find XHR");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 this._appendQueryString();
@@ -6450,8 +6442,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">head = function (url, data, fn){
-  var req = request(&#x27;HEAD&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('HEAD', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6469,8 +6461,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">options = function (url, data, fn){
-  var req = request(&#x27;OPTIONS&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('OPTIONS', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6489,15 +6481,15 @@ xhr.onreadystatechange = function(){
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseString(str) {
   var obj = {};
-  var pairs = str.split(&#x27;&#x26;&#x27;);
+  var pairs = str.split('&amp;');
   var pair;
   var pos;
 
-  for (var i = 0, len = pairs.length; i &#x3c; len; ++i) {
+  for (var i = 0, len = pairs.length; i &lt; len; ++i) {
     pair = pairs[i];
-    pos = pair.indexOf(&#x27;=&#x27;);
+    pos = pair.indexOf('=');
     if (pos == -1) {
-      obj[decodeURIComponent(pair)] = &#x27;&#x27;;
+      obj[decodeURIComponent(pair)] = '';
     } else {
       obj[decodeURIComponent(pair.slice(0, pos))] =
         decodeURIComponent(pair.slice(pos + 1));
@@ -6519,8 +6511,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">patch = function (url, data, fn){
-  var req = request(&#x27;PATCH&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('PATCH', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6538,8 +6530,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">post = function (url, data, fn){
-  var req = request(&#x27;POST&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('POST', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6553,10 +6545,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .<span class="apidocCodeKeywordSpan">post</span>(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .<span class="apidocCodeKeywordSpan">post</span>('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -6574,8 +6566,8 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">put = function (url, data, fn){
-  var req = request(&#x27;PUT&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('PUT', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -6598,7 +6590,7 @@ request
   for (var key in obj) {
     pushEncodedKeyValuePair(pairs, key, obj[key]);
   }
-  return pairs.join(&#x27;&#x26;&#x27;);
+  return pairs.join('&amp;');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6626,10 +6618,10 @@ request
     <li>description and source-code<pre class="apidocCodePre">image = function (res, fn){
   var data = []; // Binary data needs binary storage
 
-  res.on(&#x27;data&#x27;, function(chunk){
+  res.on('data', function(chunk){
       data.push(chunk);
   });
-  res.on(&#x27;end&#x27;, function () {
+  res.on('end', function () {
       fn(null, Buffer.concat(data));
   });
 }</pre></li>
@@ -6646,10 +6638,10 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">text = function (res, fn){
-  res.text = &#x27;&#x27;;
-  res.setEncoding(&#x27;utf8&#x27;);
-  res.on(&#x27;data&#x27;, function(chunk){ res.text += chunk; });
-  res.on(&#x27;end&#x27;, fn);
+  res.text = '';
+  res.setEncoding('utf8');
+  res.on('data', function(chunk){ res.text += chunk; });
+  res.on('end', fn);
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -6697,18 +6689,18 @@ request
     return this._okCallback(res);
   }
 
-  return res.status &#x3e;= 200 &#x26;&#x26; res.status &#x3c; 300;
+  return res.status &gt;= 200 &amp;&amp; res.status &lt; 300;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
   return self.callback(err);
 }
 
-self.emit(&#x27;response&#x27;, res);
+self.emit('response', res);
 
 var new_err;
 try {
   if (!self.<span class="apidocCodeKeywordSpan">_isResponseOK</span>(res)) {
-    new_err = new Error(res.statusText || &#x27;Unsuccessful HTTP response&#x27;);
+    new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
     new_err.original = err;
     new_err.response = res;
     new_err.status = res.status;
@@ -6748,7 +6740,7 @@ try {
 
 Request.prototype.callback = function(err, res){
 // console.log(this._retries, this._maxRetries)
-if (this._maxRetries &#x26;&#x26; this._retries++ &#x3c; this._maxRetries &#x26;&#x26; shouldRetry(err, res)) {
+if (this._maxRetries &amp;&amp; this._retries++ &lt; this._maxRetries &amp;&amp; shouldRetry(err, res)) {
   return this.<span class="apidocCodeKeywordSpan">_retry</span>();
 }
 
@@ -6773,15 +6765,15 @@ if (err) {
   var self = this;
 
   // deadline
-  if (this._timeout &#x26;&#x26; !this._timer) {
+  if (this._timeout &amp;&amp; !this._timer) {
     this._timer = setTimeout(function(){
-      self._timeoutError(&#x27;Timeout of &#x27;, self._timeout, &#x27;ETIME&#x27;);
+      self._timeoutError('Timeout of ', self._timeout, 'ETIME');
     }, this._timeout);
   }
   // response timeout
-  if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
+  if (this._responseTimeout &amp;&amp; !this._responseTimeoutTimer) {
     this._responseTimeoutTimer = setTimeout(function(){
-      self._timeoutError(&#x27;Response timeout of &#x27;, self._responseTimeout, &#x27;ETIMEDOUT&#x27;);
+      self._timeoutError('Response timeout of ', self._responseTimeout, 'ETIMEDOUT');
     }, this._responseTimeout);
   }
 }</pre></li>
@@ -6798,7 +6790,7 @@ this.<span class="apidocCodeKeywordSpan">_setTimeouts</span>();
 // state change
 xhr.onreadystatechange = function(){
   var readyState = xhr.readyState;
-  if (readyState &#x3e;= 2 &#x26;&#x26; self._responseTimeoutTimer) {
+  if (readyState &gt;= 2 &amp;&amp; self._responseTimeoutTimer) {
     clearTimeout(self._responseTimeoutTimer);
   }
 ...</pre></li>
@@ -6817,9 +6809,9 @@ xhr.onreadystatechange = function(){
   if (this._aborted) {
     return;
   }
-  var err = new Error(reason + timeout + &#x27;ms exceeded&#x27;);
+  var err = new Error(reason + timeout + 'ms exceeded');
   err.timeout = timeout;
-  err.code = &#x27;ECONNABORTED&#x27;;
+  err.code = 'ECONNABORTED';
   err.errno = errno;
   this.timedout = true;
   this.abort();
@@ -6831,15 +6823,15 @@ RequestBase.prototype._setTimeouts = function() {
 var self = this;
 
 // deadline
-if (this._timeout &#x26;&#x26; !this._timer) {
+if (this._timeout &amp;&amp; !this._timer) {
   this._timer = setTimeout(function(){
-    self.<span class="apidocCodeKeywordSpan">_timeoutError</span>(&#x27;Timeout of &#x27;, self._timeout, &#x27;ETIME&#x27;);
+    self.<span class="apidocCodeKeywordSpan">_timeoutError</span>('Timeout of ', self._timeout, 'ETIME');
   }, this._timeout);
 }
 // response timeout
-if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
+if (this._responseTimeout &amp;&amp; !this._responseTimeoutTimer) {
   this._responseTimeoutTimer = setTimeout(function(){
-    self._timeoutError(&#x27;Response timeout of &#x27;, self._responseTimeout, &#x27;ETIMEDOUT&#x27;);
+    self._timeoutError('Response timeout of ', self._responseTimeout, 'ETIMEDOUT');
   }, this._responseTimeout);
 ...</pre></li>
     </ul>
@@ -6858,10 +6850,10 @@ if (this._responseTimeout &#x26;&#x26; !this._responseTimeoutTimer) {
     return this;
   }
   this._aborted = true;
-  this.xhr &#x26;&#x26; this.xhr.abort(); // browser
-  this.req &#x26;&#x26; this.req.abort(); // node
+  this.xhr &amp;&amp; this.xhr.abort(); // browser
+  this.req &amp;&amp; this.req.abort(); // node
   this.clearTimeout();
-  this.emit(&#x27;abort&#x27;);
+  this.emit('abort');
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -6872,10 +6864,10 @@ RequestBase.prototype.abort = function(){
     return this;
   }
   this._aborted = true;
-  this.xhr &#x26;&#x26; this.xhr.<span class="apidocCodeKeywordSpan">abort</span>(); // browser
-  this.req &#x26;&#x26; this.req.abort(); // node
+  this.xhr &amp;&amp; this.xhr.<span class="apidocCodeKeywordSpan">abort</span>(); // browser
+  this.req &amp;&amp; this.req.abort(); // node
   this.clearTimeout();
-  this.emit(&#x27;abort&#x27;);
+  this.emit('abort');
   return this;
 };
 
@@ -6917,7 +6909,7 @@ RequestBase.prototype.abort = function(){
     <li>example usage<pre class="apidocCodePre">...
 Request.prototype.callback = function(err, res){
 // console.log(this._retries, this._maxRetries)
-if (this._maxRetries &#x26;&#x26; this._retries++ &#x3c; this._maxRetries &#x26;&#x26; shouldRetry(err, res)) {
+if (this._maxRetries &amp;&amp; this._retries++ &lt; this._maxRetries &amp;&amp; shouldRetry(err, res)) {
   return this._retry();
 }
 
@@ -6926,7 +6918,7 @@ this.<span class="apidocCodeKeywordSpan">clearTimeout</span>();
 
 if (err) {
   if (this._maxRetries) err.retries = this._retries - 1;
-  this.emit(&#x27;error&#x27;, err);
+  this.emit('error', err);
 }
 
 fn(err, res);
@@ -6946,11 +6938,11 @@ fn(err, res);
 
   // name should be either a string or an object.
   if (null === name ||  undefined === name) {
-    throw new Error(&#x27;.field(name, val) name can not be empty&#x27;);
+    throw new Error('.field(name, val) name can not be empty');
   }
 
   if (this._data) {
-    console.error(&#x22;.field() can&#x27;t be used if .send() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
+    console.error(".field() can't be used if .send() is used. Please use only .send() or only .field() &amp; .attach()");
   }
 
   if (isObject(name)) {
@@ -6969,10 +6961,10 @@ fn(err, res);
 
   // val should be defined now
   if (null === val || undefined === val) {
-    throw new Error(&#x27;.field(name, val) val can not be empty&#x27;);
+    throw new Error('.field(name, val) val can not be empty');
   }
-  if (&#x27;boolean&#x27; === typeof val) {
-    val = &#x27;&#x27; + val;
+  if ('boolean' === typeof val) {
+    val = '' + val;
   }
   this._getFormData().append(name, val);
   return this;
@@ -6985,8 +6977,7 @@ Tested browsers:
 - Latest Android, iPhone
 - IE10 through latest. IE9 with polyfills.
 
-Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span
->()`.
+Even though IE9 is supported, a polyfill for `window.FormData` is required for `.<span class="apidocCodeKeywordSpan">field</span>()`.
 
 Node 4 or later is required.
 
@@ -7011,13 +7002,13 @@ SuperAgent is easily extended via plugins.
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -7052,7 +7043,7 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">ok = function (cb) {
-  if (&#x27;function&#x27; !== typeof cb) throw Error(&#x22;Callback required&#x22;);
+  if ('function' !== typeof cb) throw Error("Callback required");
   this._okCallback = cb;
   return this;
 }</pre></li>
@@ -7111,8 +7102,8 @@ request
 *
 * Examples:
 *
-*      req.get(&#x27;/&#x27;)
-*        .<span class="apidocCodeKeywordSpan">responseType</span>(&#x27;blob&#x27;)
+*      req.get('/')
+*        .<span class="apidocCodeKeywordSpan">responseType</span>('blob')
 *        .end(callback);
 *
 * @param {String} val
@@ -7134,7 +7125,7 @@ request
     <li>description and source-code<pre class="apidocCodePre">function retry(count){
   // Default to 1 if no count passed or true
   if (arguments.length === 0 || count === true) count = 1;
-  if (count &#x3c;= 0) count = 0;
+  if (count &lt;= 0) count = 0;
   this._maxRetries = count;
   this._retries = 0;
   return this;
@@ -7153,37 +7144,37 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">send = function (data){
   var isObj = isObject(data);
-  var type = this._header[&#x27;content-type&#x27;];
+  var type = this._header['content-type'];
 
   if (this._formData) {
-    console.error(&#x22;.send() can&#x27;t be used if .attach() or .field() is used. Please use only .send() or only .field() &#x26; .attach()&#x22;);
+    console.error(".send() can't be used if .attach() or .field() is used. Please use only .send() or only .field() &amp; .attach()");
   }
 
-  if (isObj &#x26;&#x26; !this._data) {
+  if (isObj &amp;&amp; !this._data) {
     if (Array.isArray(data)) {
       this._data = [];
     } else if (!this._isHost(data)) {
       this._data = {};
     }
-  } else if (data &#x26;&#x26; this._data &#x26;&#x26; this._isHost(this._data)) {
-    throw Error(&#x22;Can&#x27;t merge these send calls&#x22;);
+  } else if (data &amp;&amp; this._data &amp;&amp; this._isHost(this._data)) {
+    throw Error("Can't merge these send calls");
   }
 
   // merge
-  if (isObj &#x26;&#x26; isObject(this._data)) {
+  if (isObj &amp;&amp; isObject(this._data)) {
     for (var key in data) {
       this._data[key] = data[key];
     }
-  } else if (&#x27;string&#x27; == typeof data) {
+  } else if ('string' == typeof data) {
     // default to x-www-form-urlencoded
-    if (!type) this.type(&#x27;form&#x27;);
-    type = this._header[&#x27;content-type&#x27;];
-    if (&#x27;application/x-www-form-urlencoded&#x27; == type) {
+    if (!type) this.type('form');
+    type = this._header['content-type'];
+    if ('application/x-www-form-urlencoded' == type) {
       this._data = this._data
-        ? this._data + &#x27;&#x26;&#x27; + data
+        ? this._data + '&amp;' + data
         : data;
     } else {
-      this._data = (this._data || &#x27;&#x27;) + data;
+      this._data = (this._data || '') + data;
     }
   } else {
     this._data = data;
@@ -7194,7 +7185,7 @@ request
   }
 
   // default to json
-  if (!type) this.type(&#x27;json&#x27;);
+  if (!type) this.type('json');
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -7205,10 +7196,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .post(&#x27;/api/pet&#x27;)
-  .<span class="apidocCodeKeywordSpan">send</span>({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .post('/api/pet')
+  .<span class="apidocCodeKeywordSpan">send</span>({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -7259,10 +7250,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .post(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .<span class="apidocCodeKeywordSpan">set</span>(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .post('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .<span class="apidocCodeKeywordSpan">set</span>('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -7283,7 +7274,7 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">sortQuery = function (sort) {
   // _sort default to true but otherwise can be a function or boolean
-  this._sort = typeof sort === &#x27;undefined&#x27; ? true : sort;
+  this._sort = typeof sort === 'undefined' ? true : sort;
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
@@ -7291,16 +7282,16 @@ request
 * Examples:
 *
 *       // default order
-*       request.get(&#x27;/user&#x27;)
-*         .query(&#x27;name=Nick&#x27;)
-*         .query(&#x27;search=Manny&#x27;)
+*       request.get('/user')
+*         .query('name=Nick')
+*         .query('search=Manny')
 *         .<span class="apidocCodeKeywordSpan">sortQuery</span>()
 *         .end(callback)
 *
 *       // customized sort function
-*       request.get(&#x27;/user&#x27;)
-*         .query(&#x27;name=Nick&#x27;)
-*         .query(&#x27;search=Manny&#x27;)
+*       request.get('/user')
+*         .query('name=Nick')
+*         .query('search=Manny')
 *         .sortQuery(function(a, b){
 ...</pre></li>
     </ul>
@@ -7318,8 +7309,8 @@ request
   if (!this._fullfilledPromise) {
     var self = this;
     if (this._endCalled) {
-      console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
- you use promises&#x22;);
+      console.warn("Warning: superagent request was sent twice, because both .end() and .then() were called. Never call .end() if
+ you use promises");
     }
     this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
       self.end(function(err, res){
@@ -7337,8 +7328,8 @@ RequestBase.prototype.then = function then(resolve, reject) {
 if (!this._fullfilledPromise) {
   var self = this;
   if (this._endCalled) {
-    console.warn(&#x22;Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
-then</span>() were called. Never call .end() if you use promises&#x22;);
+    console.warn("Warning: superagent request was sent twice, because both .end() and .<span class="apidocCodeKeywordSpan">
+then</span>() were called. Never call .end() if you use promises");
   }
   this._fullfilledPromise = new Promise(function(innerResolve, innerReject){
     self.end(function(err, res){
@@ -7359,7 +7350,7 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function timeout(options){
-  if (!options || &#x27;object&#x27; !== typeof options) {
+  if (!options || 'object' !== typeof options) {
     this._timeout = options;
     this._responseTimeout = 0;
     return this;
@@ -7367,14 +7358,14 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
 
   for(var option in options) {
     switch(option) {
-      case &#x27;deadline&#x27;:
+      case 'deadline':
         this._timeout = options.deadline;
         break;
-      case &#x27;response&#x27;:
+      case 'response':
         this._responseTimeout = options.response;
         break;
       default:
-        console.warn(&#x22;Unknown timeout option&#x22;, option);
+        console.warn("Unknown timeout option", option);
     }
   }
   return this;
@@ -7423,8 +7414,8 @@ then</span>() were called. Never call .end() if you use promises&#x22;);
  *
  * Example:
  *
- *      req.get(&#x27;/&#x27;)
- *        .<span class="apidocCodeKeywordSpan">unset</span>(&#x27;User-Agent&#x27;)
+ *      req.get('/')
+ *        .<span class="apidocCodeKeywordSpan">unset</span>('User-Agent')
  *        .end(callback);
  *
  * @param {String} field
@@ -7449,13 +7440,13 @@ delete this.header[field];
   return this;
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .get(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .get('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .<span class="apidocCodeKeywordSpan">use</span>(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -7524,7 +7515,7 @@ Existing plugins:
     // TODO: make this a util
 
     // content-type
-    var ct = header[&#x27;content-type&#x27;] || &#x27;&#x27;;
+    var ct = header['content-type'] || '';
     this.type = utils.type(ct);
 
     // params
@@ -7546,16 +7537,16 @@ Existing plugins:
 }
 this._setStatusProperties(status);
 this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-// getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+// getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
 // getResponseHeader still works. so we get content-type even if getting
 // other headers fails.
-this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+this.header['content-type'] = this.xhr.getResponseHeader('content-type');
 this.<span class="apidocCodeKeywordSpan">_setHeaderProperties</span>(this.header);
 
-if (null === this.text &#x26;&#x26; req._responseType) {
+if (null === this.text &amp;&amp; req._responseType) {
   this.body = this.xhr.response;
 } else {
-  this.body = this.req.method != &#x27;HEAD&#x27;
+  this.body = this.req.method != 'HEAD'
     ? this._parseBody(this.text ? this.text : this.xhr.response)
     : null;
 ...</pre></li>
@@ -7606,10 +7597,10 @@ if (status === 1223) {
 }
 this.<span class="apidocCodeKeywordSpan">_setStatusProperties</span>(status);
 this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-// getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+// getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
 // getResponseHeader still works. so we get content-type even if getting
 // other headers fails.
-this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+this.header['content-type'] = this.xhr.getResponseHeader('content-type');
 this._setHeaderProperties(this.header);
 ...</pre></li>
     </ul>
@@ -7629,13 +7620,13 @@ this._setHeaderProperties(this.header);
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -7666,13 +7657,13 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">superagent = function (method, url) {
   // callback
-  if (&#x27;function&#x27; == typeof url) {
-    return new exports.Request(&#x27;GET&#x27;, method).end(url);
+  if ('function' == typeof url) {
+    return new exports.Request('GET', method).end(url);
   }
 
   // url first
   if (1 == arguments.length) {
-    return new exports.Request(&#x27;GET&#x27;, method);
+    return new exports.Request('GET', method);
   }
 
   return new exports.Request(method, url);
@@ -7696,20 +7687,20 @@ request
   this.url = url;
   this.header = {}; // preserves header name case
   this._header = {}; // coerces header names to lowercase
-  this.on(&#x27;end&#x27;, function(){
+  this.on('end', function(){
     var err = null;
     var res = null;
 
     try {
       res = new Response(self);
     } catch(e) {
-      err = new Error(&#x27;Parser is unable to parse the response&#x27;);
+      err = new Error('Parser is unable to parse the response');
       err.parse = true;
       err.original = e;
       // issue #675: return the raw response if the response parsing fails
       if (self.xhr) {
-        // ie9 doesn&#x27;t have &#x27;response&#x27; property
-        err.rawResponse = typeof self.xhr.responseType == &#x27;undefined&#x27; ? self.xhr.responseText : self.xhr.response;
+        // ie9 doesn't have 'response' property
+        err.rawResponse = typeof self.xhr.responseType == 'undefined' ? self.xhr.responseText : self.xhr.response;
         // issue #876: return the http status code if the response parsing fails
         err.status = self.xhr.status ? self.xhr.status : null;
         err.statusCode = err.status; // backwards-compat only
@@ -7721,12 +7712,12 @@ request
       return self.callback(err);
     }
 
-    self.emit(&#x27;response&#x27;, res);
+    self.emit('response', res);
 
     var new_err;
     try {
       if (!self._isResponseOK(res)) {
-        new_err = new Error(res.statusText || &#x27;Unsuccessful HTTP response&#x27;);
+        new_err = new Error(res.statusText || 'Unsuccessful HTTP response');
         new_err.original = err;
         new_err.response = res;
         new_err.status = res.status;
@@ -7735,7 +7726,7 @@ request
       new_err = e; // #985 touching res may cause INVALID_STATE_ERR on old Android
     }
 
-    // #1000 don&#x27;t catch errors from the callback to avoid double calling it
+    // #1000 don't catch errors from the callback to avoid double calling it
     if (new_err) {
       self.callback(new_err, res);
     } else {
@@ -7750,13 +7741,13 @@ request
 
 var request = exports = module.exports = function(method, url) {
 // callback
-if (&#x27;function&#x27; == typeof url) {
-  return new exports.<span class="apidocCodeKeywordSpan">Request</span>(&#x27;GET&#x27;, method).end(url);
+if ('function' == typeof url) {
+  return new exports.<span class="apidocCodeKeywordSpan">Request</span>('GET', method).end(url);
 }
 
 // url first
 if (1 == arguments.length) {
-  return new exports.Request(&#x27;GET&#x27;, method);
+  return new exports.Request('GET', method);
 }
 ...</pre></li>
     </ul>
@@ -7773,9 +7764,9 @@ if (1 == arguments.length) {
     <li>description and source-code<pre class="apidocCodePre">function Response(req) {
   this.req = req;
   this.xhr = this.req.xhr;
-  // responseText is accessible only if responseType is &#x27;&#x27; or &#x27;text&#x27; and on older browsers
-  this.text = ((this.req.method !=&#x27;HEAD&#x27; &#x26;&#x26; (this.xhr.responseType === &#x27;&#x27; || this.xhr.responseType === &#x27;text&#x27;)) || typeof this.xhr
-.responseType === &#x27;undefined&#x27;)
+  // responseText is accessible only if responseType is '' or 'text' and on older browsers
+  this.text = ((this.req.method !='HEAD' &amp;&amp; (this.xhr.responseType === '' || this.xhr.responseType === 'text')) || typeof this.xhr
+.responseType === 'undefined')
      ? this.xhr.responseText
      : null;
   this.statusText = this.req.xhr.statusText;
@@ -7786,16 +7777,16 @@ if (1 == arguments.length) {
   }
   this._setStatusProperties(status);
   this.header = this.headers = parseHeader(this.xhr.getAllResponseHeaders());
-  // getAllResponseHeaders sometimes falsely returns &#x22;&#x22; for CORS requests, but
+  // getAllResponseHeaders sometimes falsely returns "" for CORS requests, but
   // getResponseHeader still works. so we get content-type even if getting
   // other headers fails.
-  this.header[&#x27;content-type&#x27;] = this.xhr.getResponseHeader(&#x27;content-type&#x27;);
+  this.header['content-type'] = this.xhr.getResponseHeader('content-type');
   this._setHeaderProperties(this.header);
 
-  if (null === this.text &#x26;&#x26; req._responseType) {
+  if (null === this.text &amp;&amp; req._responseType) {
     this.body = this.xhr.response;
   } else {
-    this.body = this.req.method != &#x27;HEAD&#x27;
+    this.body = this.req.method != 'HEAD'
       ? this._parseBody(this.text ? this.text : this.xhr.response)
       : null;
   }
@@ -7813,8 +7804,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function del(url, data, fn){
-  var req = request(&#x27;DELETE&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('DELETE', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -7832,8 +7823,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function del(url, data, fn){
-  var req = request(&#x27;DELETE&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('DELETE', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -7851,8 +7842,8 @@ if (1 == arguments.length) {
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">get = function (url, data, fn){
-  var req = request(&#x27;GET&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('GET', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.query(data);
   if (fn) req.end(fn);
   return req;
@@ -7860,13 +7851,13 @@ if (1 == arguments.length) {
     <li>example usage<pre class="apidocCodePre">...
 
 ```js
-var nocache = require(&#x27;superagent-no-cache&#x27;);
-var request = require(&#x27;superagent&#x27;);
-var prefix = require(&#x27;superagent-prefix&#x27;)(&#x27;/static&#x27;);
+var nocache = require('superagent-no-cache');
+var request = require('superagent');
+var prefix = require('superagent-prefix')('/static');
 
 request
-  .<span class="apidocCodeKeywordSpan">get</span>(&#x27;/some-url&#x27;)
-  .query({ action: &#x27;edit&#x27;, city: &#x27;London&#x27; }) // query string
+  .<span class="apidocCodeKeywordSpan">get</span>('/some-url')
+  .query({ action: 'edit', city: 'London' }) // query string
   .use(prefix) // Prefixes *only* this request
   .use(nocache) // Prevents caching of *only* this request
   .end(function(err, res){
@@ -7887,16 +7878,16 @@ request
     <ul>
     <li>description and source-code<pre class="apidocCodePre">getXHR = function () {
   if (root.XMLHttpRequest
-      &#x26;&#x26; (!root.location || &#x27;file:&#x27; != root.location.protocol
+      &amp;&amp; (!root.location || 'file:' != root.location.protocol
           || !root.ActiveXObject)) {
     return new XMLHttpRequest;
   } else {
-    try { return new ActiveXObject(&#x27;Microsoft.XMLHTTP&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP.6.0&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP.3.0&#x27;); } catch(e) {}
-    try { return new ActiveXObject(&#x27;Msxml2.XMLHTTP&#x27;); } catch(e) {}
+    try { return new ActiveXObject('Microsoft.XMLHTTP'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.6.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP.3.0'); } catch(e) {}
+    try { return new ActiveXObject('Msxml2.XMLHTTP'); } catch(e) {}
   }
-  throw Error(&#x22;Browser-only verison of superagent could not find XHR&#x22;);
+  throw Error("Browser-only verison of superagent could not find XHR");
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">...
 this._appendQueryString();
@@ -7927,8 +7918,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">head = function (url, data, fn){
-  var req = request(&#x27;HEAD&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('HEAD', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -7946,8 +7937,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">options = function (url, data, fn){
-  var req = request(&#x27;OPTIONS&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('OPTIONS', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -7966,15 +7957,15 @@ xhr.onreadystatechange = function(){
     <ul>
     <li>description and source-code<pre class="apidocCodePre">function parseString(str) {
   var obj = {};
-  var pairs = str.split(&#x27;&#x26;&#x27;);
+  var pairs = str.split('&amp;');
   var pair;
   var pos;
 
-  for (var i = 0, len = pairs.length; i &#x3c; len; ++i) {
+  for (var i = 0, len = pairs.length; i &lt; len; ++i) {
     pair = pairs[i];
-    pos = pair.indexOf(&#x27;=&#x27;);
+    pos = pair.indexOf('=');
     if (pos == -1) {
-      obj[decodeURIComponent(pair)] = &#x27;&#x27;;
+      obj[decodeURIComponent(pair)] = '';
     } else {
       obj[decodeURIComponent(pair.slice(0, pos))] =
         decodeURIComponent(pair.slice(pos + 1));
@@ -7996,8 +7987,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">patch = function (url, data, fn){
-  var req = request(&#x27;PATCH&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('PATCH', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -8015,8 +8006,8 @@ xhr.onreadystatechange = function(){
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">post = function (url, data, fn){
-  var req = request(&#x27;POST&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('POST', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -8030,10 +8021,10 @@ Works with [browserify](https://github.com/substack/node-browserify) and should 
 
 ```js
 request
-  .<span class="apidocCodeKeywordSpan">post</span>(&#x27;/api/pet&#x27;)
-  .send({ name: &#x27;Manny&#x27;, species: &#x27;cat&#x27; })
-  .set(&#x27;X-API-Key&#x27;, &#x27;foobar&#x27;)
-  .set(&#x27;Accept&#x27;, &#x27;application/json&#x27;)
+  .<span class="apidocCodeKeywordSpan">post</span>('/api/pet')
+  .send({ name: 'Manny', species: 'cat' })
+  .set('X-API-Key', 'foobar')
+  .set('Accept', 'application/json')
   .end(function(err, res){
     // Calling the end function will send the request
   });
@@ -8051,8 +8042,8 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">put = function (url, data, fn){
-  var req = request(&#x27;PUT&#x27;, url);
-  if (&#x27;function&#x27; == typeof data) fn = data, data = null;
+  var req = request('PUT', url);
+  if ('function' == typeof data) fn = data, data = null;
   if (data) req.send(data);
   if (fn) req.end(fn);
   return req;
@@ -8075,7 +8066,7 @@ request
   for (var key in obj) {
     pushEncodedKeyValuePair(pairs, key, obj[key]);
   }
-  return pairs.join(&#x27;&#x26;&#x27;);
+  return pairs.join('&amp;');
 }</pre></li>
     <li>example usage<pre class="apidocCodePre">n/a</pre></li>
     </ul>
@@ -8101,12 +8092,12 @@ request
     </h2>
     <ul>
     <li>description and source-code<pre class="apidocCodePre">cleanHeader = function (header, shouldStripCookie){
-  delete header[&#x27;content-type&#x27;];
-  delete header[&#x27;content-length&#x27;];
-  delete header[&#x27;transfer-encoding&#x27;];
-  delete header[&#x27;host&#x27;];
+  delete header['content-type'];
+  delete header['content-length'];
+  delete header['transfer-encoding'];
+  delete header['host'];
   if (shouldStripCookie) {
-    delete header[&#x27;cookie&#x27;];
+    delete header['cookie'];
   }
   return header;
 }</pre></li>
@@ -8128,7 +8119,7 @@ request
     var key = parts.shift();
     var val = parts.shift();
 
-    if (key &#x26;&#x26; val) obj[key] = val;
+    if (key &amp;&amp; val) obj[key] = val;
     return obj;
   }, {});
 }</pre></li>
@@ -8136,7 +8127,7 @@ request
 // TODO: make this a util
 
 // content-type
-var ct = header[&#x27;content-type&#x27;] || &#x27;&#x27;;
+var ct = header['content-type'] || '';
 this.type = utils.type(ct);
 
 // params
@@ -8205,15 +8196,15 @@ try {
 *
 * Examples:
 *
-*      superagent.types.xml = &#x27;application/xml&#x27;;
+*      superagent.types.xml = 'application/xml';
 *
-*      request.post(&#x27;/&#x27;)
-*        .<span class="apidocCodeKeywordSpan">type</span>(&#x27;xml&#x27;)
+*      request.post('/')
+*        .<span class="apidocCodeKeywordSpan">type</span>('xml')
 *        .send(xmlstring)
 *        .end(callback);
 *
-*      request.post(&#x27;/&#x27;)
-*        .type(&#x27;application/xml&#x27;)
+*      request.post('/')
+*        .type('application/xml')
 *        .send(xmlstring)
 *        .end(callback);
 ...</pre></li>
@@ -8228,3 +8219,4 @@ try {
     ]
 </div>
 </div>
+</body></html>
